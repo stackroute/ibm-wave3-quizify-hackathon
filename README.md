@@ -1,4 +1,5 @@
-[![CircleCI](https://circleci.com/gh/stackroute/boeing-wave4-knowledgehub.svg?style=svg)](https://circleci.com/gh/stackroute/boeing-wave4-knowledgehub)
+
+[![CircleCI](https://circleci.com/gh/stackroute/ibm-wave3-quizify.svg?style=svg)](https://circleci.com/gh/stackroute/ibm-wave3-quizify)
 
 ****Running the System****
 
