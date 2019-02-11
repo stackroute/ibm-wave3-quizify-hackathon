@@ -1,0 +1,12 @@
+package com.example.stackroute.gamemanager.exception;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
+
+@ResponseStatus(code = HttpStatus.NOT_FOUND, reason = "Specified Game Not Found on server")
+public class GameNotFound  extends Exception{
+
+        public GameNotFound(String message) {
+            super(message);
+        }
+}
