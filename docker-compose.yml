@@ -34,5 +34,14 @@ services:
       - 8888
 
 
+  user-login:
+    build: user-authentication/
+    restart: always
+    network_mode: host
+    ports:
+      - 8090:8090
+    expose:
+      - 8090
+
 
 

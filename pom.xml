@@ -30,6 +30,8 @@
         <module>zuul-gatewayservice</module>
         <module>config-server</module>
         <module>eventbrite-service</module>
+        <module>user-authentication</module>
+
     </modules>
     <dependencies>
         <dependency>
