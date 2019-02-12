@@ -17,14 +17,16 @@ public class Game {
     private String name;
     private String timelimit;
    private Topic[] topic;
+   private int playcount;
 
     @Override
     public String toString() {
         return "Game{" +
-                "id=" + id +
+                "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", timelimit='" + timelimit + '\'' +
                 ", topic=" + Arrays.toString(topic) +
+                ", playcount=" + playcount +
                 ", level='" + level + '\'' +
                 ", questions=" + Arrays.toString(questions) +
                 '}';
@@ -32,4 +34,6 @@ public class Game {
 
     private  String level;
     private Question[] questions;
+
+    private User user;
 }

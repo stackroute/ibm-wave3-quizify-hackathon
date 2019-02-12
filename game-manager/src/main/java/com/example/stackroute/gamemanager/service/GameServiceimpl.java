@@ -48,4 +48,16 @@ this.gameRepository=gameRepository;
             throw new GameNotFound("Event not Found");
         }
     }
+
+    @Override
+    public Game updateGame(Game updatedGame) throws GameNotFound{
+
+    if(gameRepository.existsById(updatedGame.getId())){
+
+        return gameRepository.save(updatedGame);
+    }
+    else
+        throw new GameNotFound("Game not found");
+
+    }
 }
