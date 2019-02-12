@@ -14,4 +14,5 @@ public class Question {
     private String answer;
     private String level;
     private int point;
+    private User user;
 }

@@ -12,4 +12,6 @@ public interface GameService {
 
    Optional<Game> deleteGame(String id) throws GameNotFound;
 
+   Game updateGame(Game game) throws GameNotFound;
+
 }
