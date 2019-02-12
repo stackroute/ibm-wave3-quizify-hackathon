@@ -1,5 +1,11 @@
 version: "2"
 services:
+  mysql:
+    image: mysql
+    ports:
+      - "3306:3306"
+    container_name: mysql
+    network_mode: host
 
   apigateway:
     image: zuul-service
@@ -35,9 +41,12 @@ services:
 
 
   user-login:
+    image: user-service
     build: user-authentication/
     restart: always
     network_mode: host
+    depends_on:
+      - mysql
     ports:
       - 8090:8090
     expose:

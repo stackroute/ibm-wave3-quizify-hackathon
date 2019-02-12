@@ -18,6 +18,13 @@ public class UserServiceImpl implements UserService {
         this.userRepo = repo;
     }
 
+
+    @Override
+    public User findByUserIdAndPassword(String userId, String password) {
+        return userRepo.findByUserIdAndPassword(userId, password);
+    }
+
+
     @Override
     public User saveUser(User user) {
         return userRepo.save(user);
@@ -28,4 +35,7 @@ public class UserServiceImpl implements UserService {
     public List<User> getAllUsers() {
         return userRepo.findAll();
     }
+
+
+
 }
