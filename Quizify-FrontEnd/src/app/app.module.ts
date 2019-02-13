@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { CardsComponent } from './cards/cards.component';
 import { MatCardModule } from '@angular/material';
 
-
+import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 
 
@@ -14,7 +14,8 @@ import { ProfileComponent } from './profile/profile.component';
   declarations: [
     AppComponent,
     CardsComponent,
-    ProfileComponent
+    ProfileComponent,
+    RegisterComponent
 
   ],
   imports: [

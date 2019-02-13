@@ -4,7 +4,6 @@ import com.stackroute.userservice.domain.User;
 
 import com.stackroute.userservice.exceptions.UpdateException;
 import com.stackroute.userservice.exceptions.UserAlreadyExistException;
-import com.stackroute.userservice.exceptions.UserNotFoundException;
 import com.stackroute.userservice.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -19,7 +18,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/api/v1")
-@Api(value = "TrackMusic",description = "operations pertaining to track the music")
+
 public class UserController {
     UserService userService;
 
@@ -28,12 +27,7 @@ public class UserController {
     this.userService = userService;
 }
 
-    @ApiOperation(value = "save all songs", response = ResponseEntity.class)
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "Successfully retrieved list"),
-            @ApiResponse(code = 401, message = "You are not authorized to view the resource"),
-            @ApiResponse(code = 403, message = "Accessing the resource you were trying to reach is forbidden"),
-            @ApiResponse(code = 404, message = "The resource you were trying to reach is not found")})
+
 
         @PostMapping("/user")
 
@@ -51,24 +45,12 @@ public class UserController {
         }
 
 
-    @ApiOperation(value = "View a list of available songs", response = ResponseEntity.class)
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "Successfully retrieved list"),
-            @ApiResponse(code = 401, message = "You are not authorized to view the resource"),
-            @ApiResponse(code = 403, message = "Accessing the resource you were trying to reach is forbidden"),
-            @ApiResponse(code = 404, message = "The resource you were trying to reach is not found")
-    })
-        @GetMapping("/user")
+    @GetMapping("/user")
         public ResponseEntity<?> getAllUser() {
             return new ResponseEntity<List<User>>(userService.getAllUsers(), HttpStatus.OK);
         }
 
-    @ApiOperation(value = "Update the list of available songs", response = ResponseEntity.class)
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "Successfully retrieved list"),
-            @ApiResponse(code = 401, message = "You are not authorized to view the resource"),
-            @ApiResponse(code = 403, message = "Accessing the resource you were trying to reach is forbidden"),
-            @ApiResponse(code = 404, message = "The resource you were trying to reach is not found")})
+
         @PutMapping("/user")
     public ResponseEntity<?> UpdateUser(@RequestBody User user) throws UpdateException, UserAlreadyExistException {
             ResponseEntity responseEntity;
@@ -83,14 +65,8 @@ public class UserController {
 
         }
 
-    @ApiOperation(value = "delete from list of available songs", response = ResponseEntity.class)
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "Successfully retrieved list"),
-            @ApiResponse(code = 401, message = "You are not authorized to view the resource"),
-            @ApiResponse(code = 403, message = "Accessing the resource you were trying to reach is forbidden"),
-            @ApiResponse(code = 404, message = "The resource you were trying to reach is not found")})
         @DeleteMapping("/user/{id}")
-    public ResponseEntity<?> getDeleteUser( @PathVariable("id") int id) throws UserNotFoundException{
+    public ResponseEntity<?> getDeleteUser( @PathVariable("id") String id){
             ResponseEntity responseEntity;
           //  try {
 

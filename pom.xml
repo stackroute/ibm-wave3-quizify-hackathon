@@ -117,7 +117,7 @@
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <version>3.0.0-M2</version>
                 <configuration>
-                    <argLine>${failsafeArgLine}</argLine>
+                    <!--<argLine>${failsafeArgLine}</argLine>-->
                 </configuration>
                 <executions>
                     <execution>

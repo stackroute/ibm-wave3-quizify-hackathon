@@ -6,13 +6,12 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
 
-@Document(collection = "topics")
+@Document(collection = "categories")
 @Data
-public class Topic {
+public class Category {
     @Id
     private String id;
     private String name;
-    private List<String> subTopicNames;
-    private List<Question> questions;
+    private List<Topic> topics;
     private Admin admin;
 }

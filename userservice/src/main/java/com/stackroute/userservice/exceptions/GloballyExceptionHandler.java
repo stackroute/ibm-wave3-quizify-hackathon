@@ -13,13 +13,10 @@ public class GloballyExceptionHandler {
     @ExceptionHandler(UpdateException.class)
     public void handleUpdateException(UpdateException e){
        // log.error("Not all mandatory fields are filled", e);
-    }    @ResponseStatus(value= HttpStatus.CONFLICT, reason="Track already exists-reason")
+    }    @ResponseStatus(value= HttpStatus.CONFLICT, reason="User already exists-reason")
     @ExceptionHandler(UserAlreadyExistException.class)
     public void handleUserAlreadyExistsException(UserAlreadyExistException e){
         //log.error("Track already exists", e);
-    }    @ResponseStatus(value= HttpStatus.NOT_FOUND, reason="Track does not exist-reason")
-    @ExceptionHandler(UserNotFoundException.class)
-    public void handleTrackNotFoundException(UserNotFoundException e){
-        //log.error("Track does not exist", e);
     }
+
 }
