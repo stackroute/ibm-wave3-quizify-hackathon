@@ -3,14 +3,15 @@ package com.stackroute.quizify.questionmanager.domain;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 
+import java.util.List;
+
 @Data
 public class Question {
     @Id
     private String id;
     private String type;
     private String statement;
-    private String[] options;
+    private List<String> options;
     private String answer;
-    private String level;
-    private int point;
+    private Admin admin;
 }
