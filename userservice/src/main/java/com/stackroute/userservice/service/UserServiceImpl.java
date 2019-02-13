@@ -4,7 +4,6 @@ import com.stackroute.userservice.domain.User;
 
 import com.stackroute.userservice.exceptions.UpdateException;
 import com.stackroute.userservice.exceptions.UserAlreadyExistException;
-import com.stackroute.userservice.exceptions.UserNotFoundException;
 import com.stackroute.userservice.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -59,14 +58,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean deleteUser(int id) throws UserNotFoundException {
+    public boolean deleteUser(String id) {
         boolean status = false;
         if (userRepository.existsById(id)) {
             userRepository.deleteById(id);
             status = true;
 
-        } else {
-            throw new UserNotFoundException("tracknotfound");
         }
         return status;
     }
