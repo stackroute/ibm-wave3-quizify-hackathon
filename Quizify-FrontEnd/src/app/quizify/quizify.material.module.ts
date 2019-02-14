@@ -9,12 +9,18 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material';
 import {MatDialogModule} from '@angular/material/dialog';
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0736795a80f6b9b2c0f89ed46aa6d024ac2dba50
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0736795a80f6b9b2c0f89ed46aa6d024ac2dba50
 @NgModule({
    declarations: [],
    imports: [

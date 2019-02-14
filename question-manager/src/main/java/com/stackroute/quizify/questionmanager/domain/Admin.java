@@ -8,5 +8,4 @@ public class Admin {
     @Id
     private String id;
     private String name;
-    private String timeStamp;
 }
