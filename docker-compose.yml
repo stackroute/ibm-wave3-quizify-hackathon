@@ -1,11 +1,15 @@
 version: "2"
 services:
   mysql:
-    image: mysql
+    image: mysql:5.7
     ports:
-      - "3306:3306"
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=Root@123
+      - MYSQL_DATABASE=loginDB
     container_name: mysql
     network_mode: host
+    hostname: localhost
 
   mongo:
     image: mongo:3.4-jessie
@@ -21,6 +25,7 @@ services:
     network_mode: host
     depends_on:
     - eurekaserver
+    - mysql
     ports:
     - 8092:8092
     expose:
@@ -31,6 +36,7 @@ services:
     build: eureka-server/
     restart: always
     network_mode: host
+    container_name: eureka-server-docker
     ports:
     - 9091:9091
     expose:
@@ -41,6 +47,9 @@ services:
       build: config-server/
       restart: always
       network_mode: host
+      depends_on:
+      - eurekaserver
+      - mysql
       ports:
       - 8888:8888
       expose:
@@ -54,10 +63,13 @@ services:
     network_mode: host
     depends_on:
       - mysql
+      - eurekaserver
+      - configserver
+      - apigateway
     ports:
-      - 8090:8090
+      - 8095:8095
     expose:
-      - 8090
+      - 8095
 
   user-service:
     image: userservice

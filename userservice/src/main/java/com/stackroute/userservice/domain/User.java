@@ -21,7 +21,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class User {
     @Id
     //  @GeneratedValue
-    @Transient
+   
     private String userId;
     // @ApiModelProperty(notes="name of track")
     private String password;
