@@ -1,0 +1,49 @@
+.container {
+    padding: 16px;
+   }
+   .container h1
+   {text-align: center;
+   
+   }
+   p {
+       font-family: sans-serif;
+       text-align: center;
+   }
+
+.id
+{
+    margin-top: 2%;
+    margin-left: 43%;
+}
+
+.password{
+    margin-left: 43%;  
+}
+.email {
+
+    margin-left: 43%;
+}
+.username {
+    margin-left: 43%
+}
+.button{
+
+    margin-left: 43%;
+
+}
+.nextbtn {
+    margin-left: 46%;
+    width: 7%;
+}
+
+.mat-radio-button {
+    margin-left: 16px;
+    
+}
+.gender {
+    margin-left: 43%;
+}
+.example-additional-selection {
+    opacity: 0.75;
+    font-size: 0.75em;
+  }

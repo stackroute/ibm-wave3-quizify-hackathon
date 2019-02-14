@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+// import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
 
 
 
@@ -19,7 +21,8 @@ import { AppComponent } from './app.component';
     BrowserModule,
     AppRoutingModule,
     QuizifyModule
-  ],
+    ],
+    // schemas: [CUSTOM_ELEMENTS_SCHEMA] ,
   providers: [],
   bootstrap: [AppComponent]
 })
