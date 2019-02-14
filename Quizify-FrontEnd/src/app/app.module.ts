@@ -4,10 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CardsComponent } from './cards/cards.component';
-import { MatCardModule } from '@angular/material';
-
+import { MatLabel, MatDialogRef, MAT_DIALOG_DATA, MatChipsModule } from '@angular/material';
+import { MatMenuModule, MatButtonModule, MatIconModule, MatCardModule, MatDialogModule } from '@angular/material';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { GamehistoryComponent } from './gamehistory/gamehistory.component';
+import { ProfileuserComponent } from './profileuser/profileuser.component';
 
 
 @NgModule({
@@ -15,15 +18,35 @@ import { ProfileComponent } from './profile/profile.component';
     AppComponent,
     CardsComponent,
     ProfileComponent,
-    RegisterComponent
+    ProfileuserComponent,
+    RegisterComponent,
+    GamehistoryComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatCardModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
+    MatDialogModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatIconModule,
+    MatCardModule,
+    MatChipsModule
+    
+    
   ],
-  providers: [],
+  
+  exports: [AppComponent,
+    CardsComponent,
+    ProfileComponent,
+    ProfileuserComponent,
+    RegisterComponent,
+    GamehistoryComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
