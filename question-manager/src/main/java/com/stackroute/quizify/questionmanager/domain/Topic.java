@@ -14,4 +14,5 @@ public class Topic {
     private String name;
     private List<String> subTopicNames;
     private List<Question> questions;
+    private Admin admin;
 }

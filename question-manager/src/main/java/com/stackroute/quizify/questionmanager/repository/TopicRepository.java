@@ -8,6 +8,6 @@ import java.util.Optional;
 
 @Repository
 public interface TopicRepository extends MongoRepository<Topic, String> {
-    boolean existsByTopicName(String topicName);
-    Optional<Topic> findByName(String topicName);
+//    boolean existsByTopicName(String topicName);
+//    Optional<Topic> findByName(String topicName);
 }
