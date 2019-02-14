@@ -11,6 +11,13 @@ services:
     network_mode: host
     hostname: localhost
 
+  mongo:
+    image: mongo:3.4-jessie
+    ports:
+      - "27017:27017"
+    container_name: mongo
+    network_mode: host
+
   apigateway:
     image: zuul-service
     build: zuul-gatewayservice/
@@ -63,6 +70,20 @@ services:
       - 8095:8095
     expose:
       - 8095
+
+  user-service:
+    image: userservice
+    build: userservice/
+    restart: always
+    network_mode: host
+    depends_on:
+      - mongo
+    ports:
+      - 8999:8999
+    expose:
+      - 8999
+
+
 
 
 
