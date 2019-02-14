@@ -6,10 +6,12 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { CardsComponent } from './components/cards/cards.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material';
+import { SearchComponent } from './components/search/search.component';
 @NgModule({
   declarations: [ CardsComponent,
     ProfileComponent,
-    RegisterComponent],
+    RegisterComponent,
+    SearchComponent],
   imports: [
     CommonModule,
     BrowserAnimationsModule,
@@ -19,7 +21,8 @@ import { MatCardModule } from '@angular/material';
   ],
   exports: [ CardsComponent,
     ProfileComponent,
-    RegisterComponent ]
+    RegisterComponent,
+    SearchComponent ]
 
 })
 export class QuizifyModule { }
