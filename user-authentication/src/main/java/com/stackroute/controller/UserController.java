@@ -23,16 +23,16 @@ import java.util.*;
 @RequestMapping("api/")
 @RestController
 public class UserController {
-    @Autowired
     private UserService userService;
+
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
 
-//    @Autowired
-//    public UserController(UserService userService) {
-//
-//        this.userService = userService;
-//    }
+    @Autowired
+    public UserController(UserService userService) {
+
+        this.userService = userService;
+    }
 
 
     @PostMapping("user")

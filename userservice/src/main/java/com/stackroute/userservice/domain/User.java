@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
 
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 
@@ -20,6 +21,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class User {
     @Id
     //  @GeneratedValue
+   
     private String userId;
     // @ApiModelProperty(notes="name of track")
     private String password;
