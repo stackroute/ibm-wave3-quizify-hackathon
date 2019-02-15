@@ -2,8 +2,9 @@ package com.stackroute.userservice.service;
 
 import com.stackroute.userservice.domain.User;
 
-import com.stackroute.userservice.exceptions.UpdateException;
+
 import com.stackroute.userservice.exceptions.UserAlreadyExistException;
+import com.stackroute.userservice.exceptions.UserNotFoundException;
 import com.stackroute.userservice.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,13 +39,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User updateUser(User user) throws UpdateException {
+    public User updateUser(User user) throws UserNotFoundException {
         if (userRepository.existsById(user.getUserId())) {
-            throw new UpdateException("user already exists");
+            throw new UserNotFoundException("user already exists");
         }
         User savedUser = userRepository.save(user);
         if (savedUser == null) {
-            throw new UpdateException("User already exists");
+            throw new UserNotFoundException("User already exists");
         }
         return savedUser;
 
@@ -52,7 +53,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> getUpdateUser() throws UpdateException {
+
+
+    public List<User> getUpdateUser() throws UserNotFoundException {
 
         return userRepository.findAll();
     }
@@ -73,3 +76,4 @@ public class UserServiceImpl implements UserService {
     public List<User> getDeleteUser(){
         return userRepository.findAll();
     }*/
+
