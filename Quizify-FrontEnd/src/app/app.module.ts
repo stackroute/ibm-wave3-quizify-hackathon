@@ -25,10 +25,12 @@ import { FormsModule } from '@angular/forms';
     MatSelectModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    QuizifyModule,
+    HttpClientModule
   ],
+  providers: [] ,
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
