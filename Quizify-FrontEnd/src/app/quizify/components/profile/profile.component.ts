@@ -3,7 +3,7 @@ import { Component, OnInit, Inject, Input, Output, EventEmitter } from '@angular
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material';
 import { Route } from '@angular/compiler/src/core';
 import { RouterLink, ActivatedRoute, Router } from '@angular/router';
-import { ProfileuserComponent } from '../profileuser/profileuser.component';
+// import { ProfileuserComponent } from '../profileuser/profileuser.component';
 
 @Component({
   selector: 'app-profile',
@@ -14,11 +14,7 @@ export class ProfileComponent {
 
 
   constructor( private router: Router) { }
-  
-  ngOnInit() {
-  } 
-   
-  openDetails(){
+ openDetails() {
     this.router.navigate(['profileuser']);
   }
   openHistory() {
