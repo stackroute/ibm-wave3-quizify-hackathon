@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ProfileuserComponent } from './quizify/components/profileuser/profileuser.component';
 import { GamehistoryComponent } from './quizify/components/gamehistory/gamehistory.component';
-import { Profile } from 'selenium-webdriver/firefox';
 
 const routes: Routes = [
    {

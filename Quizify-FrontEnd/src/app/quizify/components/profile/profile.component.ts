@@ -1,12 +1,5 @@
-<<<<<<< HEAD
 import { Component, OnInit } from '@angular/core';
-
-=======
-import { Component, OnInit, Inject, Input, Output, EventEmitter } from '@angular/core';
-import { MatDialog, MAT_DIALOG_DATA } from '@angular/material';
-import { Route } from '@angular/compiler/src/core';
 import { RouterLink, ActivatedRoute, Router } from '@angular/router';
->>>>>>> cdb843b9b658083016b843cdea2a51a2818ccb15
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -14,13 +7,9 @@ import { RouterLink, ActivatedRoute, Router } from '@angular/router';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
-
-<<<<<<< HEAD
-  ngOnInit() {
-=======
   constructor( private router: Router) { }
-
+   ngOnInit() {
+   }
   openProfileMenu() {
     this.router.navigate(['profile']);
   }
@@ -29,8 +18,5 @@ export class ProfileComponent implements OnInit {
   }
   openHistory() {
     this.router.navigate(['gamehistory']);
-
->>>>>>> cdb843b9b658083016b843cdea2a51a2818ccb15
   }
-
 }
