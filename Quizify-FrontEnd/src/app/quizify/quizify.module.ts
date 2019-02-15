@@ -11,6 +11,7 @@ import { CardsComponent } from './components/cards/cards.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material';
 import { SearchComponent } from './components/search/search.component';
+import { HeaderComponent } from './components/header/header.component';
 @NgModule({
   declarations: [ CardsComponent,
     ProfileComponent,
@@ -18,6 +19,7 @@ import { SearchComponent } from './components/search/search.component';
     SearchComponent,
     ProfileuserComponent,
     GamehistoryComponent,
+    HeaderComponent,
      ],
 
   imports: [

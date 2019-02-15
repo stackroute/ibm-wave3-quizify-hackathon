@@ -6,7 +6,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-// import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core
+ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { MatLabel, MatDialogRef, MAT_DIALOG_DATA, MatChipsModule } from '@angular/material';
 import { MatMenuModule, MatButtonModule, MatIconModule, MatCardModule, MatDialogModule } from '@angular/material';
@@ -42,7 +42,7 @@ import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform
     MatChipsModule,
     QuizifyModule
     ],
-    // schemas: [CUSTOM_ELEMENTS_SCHEMA] ,
+schemas: [CUSTOM_ELEMENTS_SCHEMA] ,
   providers: [],
 
   exports: [AppComponent
