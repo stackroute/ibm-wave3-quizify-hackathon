@@ -1,3 +1,5 @@
+import { GamehistoryComponent } from './components/gamehistory/gamehistory.component';
+import { ProfileuserComponent } from './components/profileuser/profileuser.component';
 import { QuizifyMaterialModule } from './quizify.material.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -11,7 +13,10 @@ import { SearchComponent } from './components/search/search.component';
   declarations: [ CardsComponent,
     ProfileComponent,
     RegisterComponent,
-    SearchComponent],
+    SearchComponent,
+    ProfileuserComponent,
+    GamehistoryComponent
+  ],
   imports: [
     CommonModule,
     BrowserAnimationsModule,
@@ -22,7 +27,10 @@ import { SearchComponent } from './components/search/search.component';
   exports: [ CardsComponent,
     ProfileComponent,
     RegisterComponent,
-    SearchComponent ]
+    SearchComponent,
+    ProfileuserComponent,
+    GamehistoryComponent
+  ]
 
 })
 export class QuizifyModule { }
