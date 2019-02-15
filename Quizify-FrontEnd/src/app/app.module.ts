@@ -4,7 +4,10 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+// import { LoginComponent } from './login/login.component';
+// import {TokenInterceptorService } from './token-interceptor.service' ;
+import { AuthService } from './quizify/auth.service';
 
 
 
@@ -18,9 +21,11 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    QuizifyModule
+    QuizifyModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AuthService
+  ] ,
   bootstrap: [AppComponent]
 })
 export class AppModule { }

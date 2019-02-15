@@ -5,21 +5,28 @@ import { RegisterComponent } from './components/register/register.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { CardsComponent } from './components/cards/cards.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { MatCardModule } from '@angular/material';
+import { MatCardModule, MatCardHeader } from '@angular/material';
+import { LoginComponent } from './components/login/login.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 @NgModule({
   declarations: [ CardsComponent,
     ProfileComponent,
-    RegisterComponent],
+    RegisterComponent,
+    LoginComponent],
   imports: [
     CommonModule,
     BrowserAnimationsModule,
     MatCardModule,
-    QuizifyMaterialModule
+    QuizifyMaterialModule,
+    FormsModule,
+    MatCardModule
 
   ],
   exports: [ CardsComponent,
     ProfileComponent,
-    RegisterComponent ]
+    RegisterComponent,
+  LoginComponent ]
 
 })
 export class QuizifyModule { }
