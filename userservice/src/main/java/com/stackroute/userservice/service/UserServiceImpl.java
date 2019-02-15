@@ -2,7 +2,7 @@ package com.stackroute.userservice.service;
 
 import com.stackroute.userservice.domain.User;
 
-import com.stackroute.userservice.exceptions.UpdateException;
+
 import com.stackroute.userservice.exceptions.UserAlreadyExistException;
 import com.stackroute.userservice.exceptions.UserNotFoundException;
 import com.stackroute.userservice.repository.UserRepository;
@@ -39,13 +39,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User updateUser(User user) throws UpdateException {
+    public User updateUser(User user) throws UserNotFoundException {
         if (userRepository.existsById(user.getUserId())) {
-            throw new UpdateException("user already exists");
+            throw new UserNotFoundException("user already exists");
         }
         User savedUser = userRepository.save(user);
         if (savedUser == null) {
-            throw new UpdateException("User already exists");
+            throw new UserNotFoundException("User already exists");
         }
         return savedUser;
 
@@ -53,20 +53,20 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> getUpdateUser() throws UpdateException {
+
+
+    public List<User> getUpdateUser() throws UserNotFoundException {
 
         return userRepository.findAll();
     }
 
     @Override
-    public boolean deleteUser(int id) throws UserNotFoundException {
+    public boolean deleteUser(String id) {
         boolean status = false;
         if (userRepository.existsById(id)) {
             userRepository.deleteById(id);
             status = true;
 
-        } else {
-            throw new UserNotFoundException("tracknotfound");
         }
         return status;
     }
@@ -76,3 +76,4 @@ public class UserServiceImpl implements UserService {
     public List<User> getDeleteUser(){
         return userRepository.findAll();
     }*/
+

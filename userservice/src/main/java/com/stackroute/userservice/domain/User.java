@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
 
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 
@@ -19,15 +20,17 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor
 public class User {
     @Id
-  //  @GeneratedValue
-   private int UserId;
-   // @ApiModelProperty(notes="name of track")
-    private String Password;
-   // @ApiModelProperty(notes = "comments on track")
-   private String EmailId;
-    private String UserName;
+    //  @GeneratedValue
+   
+    private String userId;
+    // @ApiModelProperty(notes="name of track")
+    private String password;
+    //   @ApiModelProperty(notes = "comments on track")
+    private String emailId;
+    private String userName;
     private String Intrests;
     private String gender;
+
 
 
 
