@@ -5,7 +5,6 @@ import { RegisterComponent } from './components/register/register.component';
 import { QuizifyMaterialModule } from './quizify.material.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { ProfileComponent } from './components/profile/profile.component';
 import { CardsComponent } from './components/cards/cards.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
