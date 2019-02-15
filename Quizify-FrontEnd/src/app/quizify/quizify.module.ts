@@ -1,3 +1,5 @@
+import { GamehistoryComponent } from './components/gamehistory/gamehistory.component';
+import { ProfileuserComponent } from './components/profileuser/profileuser.component';
 import { MatRadioModule } from '@angular/material/radio';
 import { RegisterComponent } from './components/register/register.component';
 import { QuizifyMaterialModule } from './quizify.material.module';
@@ -12,9 +14,11 @@ import { SearchComponent } from './components/search/search.component';
 @NgModule({
   declarations: [ CardsComponent,
     ProfileComponent,
-
     RegisterComponent,
-    SearchComponent],
+    SearchComponent,
+    ProfileuserComponent,
+    GamehistoryComponent,
+     ],
 
   imports: [
     CommonModule,
@@ -26,7 +30,10 @@ import { SearchComponent } from './components/search/search.component';
   exports: [ CardsComponent,
     ProfileComponent,
     RegisterComponent,
-    SearchComponent ]
+    SearchComponent,
+    ProfileuserComponent,
+    GamehistoryComponent,
+   ]
 
 })
 export class QuizifyModule { }
