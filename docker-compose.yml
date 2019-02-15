@@ -14,7 +14,9 @@ services:
   mongo:
     image: mongo:3.4-jessie
     ports:
-      - "27017:27017"
+      - 27017:27017
+    expose:
+      - 27017
     container_name: mongo
     network_mode: host
 
@@ -84,6 +86,20 @@ services:
       - 8999
 
 
+  question-manager-service:
+    image: question-manager-service
+    build: question-manager-service/
+    restart: always
+    network_mode: host
+    depends_on:
+      - mongo
+      - eurekaserver
+      - configserver
+      - apigateway
+    ports:
+      - 8001:8001
+    expose:
+      - 8001
 
 
 

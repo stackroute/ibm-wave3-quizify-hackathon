@@ -30,9 +30,10 @@
         <module>zuul-gatewayservice</module>
         <module>config-server</module>
         <module>eventbrite-service</module>
-        <module>seachService</module>
+        <module>search-service</module>
         <module>user-authentication</module>
 	<module>userservice</module>
+	<module>question-manager-service</module>
     </modules>
     <dependencies>
         <dependency>

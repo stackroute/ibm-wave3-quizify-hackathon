@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { RouterLink, ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor( private router: Router) { }
+   ngOnInit() {
+   }
+  openProfileMenu() {
+    this.router.navigate(['profile']);
   }
-
+  openDetails() {
+    this.router.navigate(['profileuser']);
+  }
+  openHistory() {
+    this.router.navigate(['gamehistory']);
+  }
 }

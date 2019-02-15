@@ -9,12 +9,10 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material';
 import {MatDialogModule} from '@angular/material/dialog';
-// import {FlexLayoutModule} from '@angular/flex-layout';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
-
-
-// import { DailougeComponent } from '../components/dailouge/dailouge.component';
+import {MatRadioModule} from '@angular/material/radio';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 
 
@@ -28,8 +26,10 @@ import {MatListModule} from '@angular/material/list';
       MatMenuModule, MatFormFieldModule,
        MatInputModule, MatTooltipModule, MatSnackBarModule, MatDialogModule, MatSidenavModule, MatListModule,
        MatGridListModule,
-       MatInputModule
+       MatInputModule,
+       MatRadioModule
       ] ,
+      schemas: [CUSTOM_ELEMENTS_SCHEMA] ,
       exports: [
         MatCardModule,
         MatButtonModule,

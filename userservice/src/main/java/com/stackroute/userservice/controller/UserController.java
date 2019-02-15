@@ -2,8 +2,9 @@ package com.stackroute.userservice.controller;
 
 import com.stackroute.userservice.domain.User;
 
-import com.stackroute.userservice.exceptions.UpdateException;
+
 import com.stackroute.userservice.exceptions.UserAlreadyExistException;
+import com.stackroute.userservice.exceptions.UserNotFoundException;
 import com.stackroute.userservice.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -31,8 +32,7 @@ public class UserController {
 
         @PostMapping("/user")
 
-        public ResponseEntity<?> saveUser(@RequestBody User user) throws UserAlreadyExistException
-        {
+        public ResponseEntity<?> saveUser(@RequestBody User user) throws UserAlreadyExistException, UserNotFoundException {
             ResponseEntity responseEntity;
            // try{
                 userService.saveUser(user);
@@ -52,7 +52,7 @@ public class UserController {
 
 
         @PutMapping("/user")
-    public ResponseEntity<?> UpdateUser(@RequestBody User user) throws UpdateException, UserAlreadyExistException {
+    public ResponseEntity<?> UpdateUser(@RequestBody User user) throws UserNotFoundException, UserAlreadyExistException {
             ResponseEntity responseEntity;
            // try{
                 userService.saveUser(user);
