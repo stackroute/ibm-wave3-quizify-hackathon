@@ -1,32 +1,43 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { NgModule } from '@angular/core';
-<<<<<<< HEAD
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CardsComponent } from './cards/cards.component';
 import { MatCardModule } from '@angular/material';
-=======
-import { MatCardModule } from '@angular/material';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { GameComponent } from './game/game.component';
+import {MatSelectModule} from '@angular/material/select';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { GameserviceService } from './game/gameservice.service';
+
+
+
+
+
 import { ProfileComponent } from './profile/profile.component';
->>>>>>> 61c2e20a26a55352419c1d30905c7426c1080c83
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-<<<<<<< HEAD
-    CardsComponent
-=======
-    ProfileComponent
->>>>>>> 61c2e20a26a55352419c1d30905c7426c1080c83
+    ProfileComponent,
+    GameComponent,
+    HttpClient
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatCardModule
+    MatCardModule,
+    BrowserModule,
+    MatSelectModule,
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
-  providers: [],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+  providers: [GameserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
