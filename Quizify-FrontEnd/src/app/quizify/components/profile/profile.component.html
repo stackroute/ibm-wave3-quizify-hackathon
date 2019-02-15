@@ -14,7 +14,7 @@
 <mat-card-content> -->
   
     
-    <button mat-raised-button color="primary" [matMenuTriggerFor]="menu">
+    <button mat-raised-button color="primary" [matMenuTriggerFor]="menu" (click)="openProfileMenu()">
         <mat-icon>account_circle</mat-icon>
         <span>Profile</span>
     </button>
@@ -22,25 +22,6 @@
     <mat-menu #menu="matMenu">
       <button mat-menu-item  (click)="openDetails()">Account</button> 
       <button mat-menu-item  (click)="openHistory()">History</button> 
-      
     </mat-menu>
-<<<<<<< HEAD
     
   
-=======
-    <!-- <mat-menu #menu="matMenu">
-      <mat-chip-list  >
-        <mat-chip color="warn" class="navLinks" [routerLink]="['/profileuser']" >Account</mat-chip>
-      </mat-chip-list>
-      <mat-chip-list>
-        <mat-chip color="warn" class="navLinks" [routerLink]="['/gamehistory']">Game History</mat-chip>
-      </mat-chip-list>
-    </mat-menu> -->
-    <!-- </mat-card-content> -->
-  
-
-<!-- 
-  <ng-template>
-    <app-profileuser></app-profileuser>
-  </ng-template> -->
->>>>>>> c92dfbd061ed33bac7b6b361a6e17567473f5c4f

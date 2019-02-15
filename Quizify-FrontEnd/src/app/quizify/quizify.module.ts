@@ -1,10 +1,7 @@
-<<<<<<< HEAD
 import { GamehistoryComponent } from './components/gamehistory/gamehistory.component';
 import { ProfileuserComponent } from './components/profileuser/profileuser.component';
-=======
 import { MatRadioModule } from '@angular/material/radio';
 import { RegisterComponent } from './components/register/register.component';
->>>>>>> c92dfbd061ed33bac7b6b361a6e17567473f5c4f
 import { QuizifyMaterialModule } from './quizify.material.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -17,20 +14,12 @@ import { SearchComponent } from './components/search/search.component';
 @NgModule({
   declarations: [ CardsComponent,
     ProfileComponent,
-<<<<<<< HEAD
-    RegisterComponent
-  ],
-=======
     RegisterComponent,
-<<<<<<< HEAD
     SearchComponent,
     ProfileuserComponent,
-    GamehistoryComponent
-  ],
-=======
-    SearchComponent],
->>>>>>> 0736795a80f6b9b2c0f89ed46aa6d024ac2dba50
->>>>>>> c92dfbd061ed33bac7b6b361a6e17567473f5c4f
+    GamehistoryComponent,
+     ],
+
   imports: [
     CommonModule,
     BrowserAnimationsModule,
@@ -40,20 +29,11 @@ import { SearchComponent } from './components/search/search.component';
   ],
   exports: [ CardsComponent,
     ProfileComponent,
-<<<<<<< HEAD
-    RegisterComponent
-    ]
-=======
     RegisterComponent,
-<<<<<<< HEAD
     SearchComponent,
     ProfileuserComponent,
-    GamehistoryComponent
-  ]
-=======
-    SearchComponent ]
->>>>>>> 0736795a80f6b9b2c0f89ed46aa6d024ac2dba50
->>>>>>> c92dfbd061ed33bac7b6b361a6e17567473f5c4f
+    GamehistoryComponent,
+   ]
 
 })
 export class QuizifyModule { }

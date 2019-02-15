@@ -17,7 +17,10 @@ export class ProfileComponent {
   
   ngOnInit() {
   } 
-   
+
+  openProfileMenu(){
+    this.router.navigate(['profile']);
+  }
   openDetails(){
     this.router.navigate(['profileuser']);
   }
