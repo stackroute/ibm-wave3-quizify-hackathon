@@ -20,6 +20,7 @@
              </mat-card-actions>
          </mat-card>
 
+<<<<<<< HEAD
     <mat-card class="example-card">      
           <img mat-card-image src="../assets/qq3.png" alt="3">       
               <mat-card-actions>
@@ -29,3 +30,19 @@
              </mat-card>
          
 </div>
+=======
+<mat-card-content> -->
+  
+    
+    <button mat-raised-button color="primary" [matMenuTriggerFor]="menu" (click)="openProfileMenu()">
+        <mat-icon>account_circle</mat-icon>
+        <span>Profile</span>
+    </button>
+
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item  (click)="openDetails()">Account</button> 
+      <button mat-menu-item  (click)="openHistory()">History</button> 
+    </mat-menu>
+    
+  
+>>>>>>> cdb843b9b658083016b843cdea2a51a2818ccb15

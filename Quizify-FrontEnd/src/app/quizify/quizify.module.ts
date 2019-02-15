@@ -1,7 +1,10 @@
+import { GamehistoryComponent } from './components/gamehistory/gamehistory.component';
+import { ProfileuserComponent } from './components/profileuser/profileuser.component';
+import { MatRadioModule } from '@angular/material/radio';
+import { RegisterComponent } from './components/register/register.component';
 import { QuizifyMaterialModule } from './quizify.material.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RegisterComponent } from './components/register/register.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { CardsComponent } from './components/cards/cards.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -11,7 +14,11 @@ import { SearchComponent } from './components/search/search.component';
   declarations: [ CardsComponent,
     ProfileComponent,
     RegisterComponent,
-    SearchComponent],
+    SearchComponent,
+    ProfileuserComponent,
+    GamehistoryComponent,
+     ],
+
   imports: [
     CommonModule,
     BrowserAnimationsModule,
@@ -22,7 +29,10 @@ import { SearchComponent } from './components/search/search.component';
   exports: [ CardsComponent,
     ProfileComponent,
     RegisterComponent,
-    SearchComponent ]
+    SearchComponent,
+    ProfileuserComponent,
+    GamehistoryComponent,
+   ]
 
 })
 export class QuizifyModule { }
