@@ -33,6 +33,7 @@
         <module>search-service</module>
         <module>user-authentication</module>
 	<module>userservice</module>
+	<module>question-manager-service</module>
     </modules>
     <dependencies>
         <dependency>
