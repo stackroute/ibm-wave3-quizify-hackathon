@@ -74,5 +74,17 @@ public class QuestionController {
         }
     }
 
+    @ApiOperation(value = "Get All Questions")
+    @GetMapping("/categories/{categoryName}/{topicName}")
+    public ResponseEntity<?> getAllQuestions(@PathVariable String categoryName, @PathVariable String topicName) {
+        System.out.println(categoryName);
+        System.out.println(topicName);
+        try {
+            return new ResponseEntity<List<Question>>(this.questionService.getAllQuestions(categoryName, topicName), HttpStatus.OK);
+        } catch (NoQuestionFoundException e) {
+            return new ResponseEntity<String>(e.getMessage(), HttpStatus.NOT_FOUND);
+        }
+    }
+
 
 }

@@ -13,4 +13,5 @@ public interface QuestionService {
     Question removeQuestion(Question question) throws QuestionDoesNotExistException;
 
     List<Question> getQuestion(String categoryName, String topicName, String level, int numOfQuestions) throws NoQuestionFoundException;
+    List<Question> getAllQuestions(String categoryName, String topicName) throws NoQuestionFoundException;
 }

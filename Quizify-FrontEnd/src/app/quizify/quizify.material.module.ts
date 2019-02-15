@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import {MatCardModule} from '@angular/material/card';
+import {MatCardModule, MatCardHeader} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule, MatGridListModule} from '@angular/material';
+import {MatIconModule, MatGridListModule, MatSpinner} from '@angular/material';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatTooltipModule} from '@angular/material/tooltip';

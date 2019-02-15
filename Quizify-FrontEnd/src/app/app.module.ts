@@ -20,13 +20,11 @@ import { QuizifyModule } from './quizify/quizify.module';
     QuizifyMaterialModule,
     QuizifyModule,
     AppRoutingModule,
-    MatCardModule,
-    MatSelectModule,
-    BrowserAnimationsModule,
+    QuizifyModule,
     HttpClientModule
   ],
+  providers: [] ,
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
