@@ -11,4 +11,6 @@ import java.util.List;
 public interface QuestionRepository extends MongoRepository<Question, String> {
     @Query("{ 'category._id': '?0' , 'topic._id': '?1' , 'level': '?2' }")
     List<Question> getQuestions(String categoryName, String topicName, String level);
+    @Query("{ 'category._id': '?0' , 'topic._id': '?1' }")
+    List<Question> getAllQuestions(String categoryName, String topicName);
 }

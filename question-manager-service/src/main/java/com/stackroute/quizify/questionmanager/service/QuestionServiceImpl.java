@@ -62,6 +62,17 @@ public class QuestionServiceImpl implements QuestionService {
         }
     }
 
+    @Override
+    public List<Question> getAllQuestions(String categoryName, String topicName) throws NoQuestionFoundException {
+        List<Question> questionList = this.questionRepository.getAllQuestions(categoryName, topicName);
+        System.out.println(questionList);
+        if (questionList.isEmpty())
+            throw new NoQuestionFoundException("No Question Found!");
+        else {
+            return questionList;
+        }
+    }
+
     private List<Integer> randomNumbers(int maxRange, int totalNumbers) {
         List<Integer> result = new ArrayList<>();
         List<Integer> numbers = new ArrayList<>();
