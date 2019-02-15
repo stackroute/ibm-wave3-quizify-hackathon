@@ -10,6 +10,8 @@ import { CardsComponent } from './components/cards/cards.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material';
 import { SearchComponent } from './components/search/search.component';
+import { GameComponent } from './components/game/game.component';
+import { QuestionGeneratorComponent } from './components/question-generator/question-generator.component';
 @NgModule({
   declarations: [ CardsComponent,
     ProfileComponent,
@@ -17,6 +19,8 @@ import { SearchComponent } from './components/search/search.component';
     SearchComponent,
     ProfileuserComponent,
     GamehistoryComponent,
+    GameComponent,
+    QuestionGeneratorComponent
      ],
 
   imports: [
@@ -32,6 +36,8 @@ import { SearchComponent } from './components/search/search.component';
     SearchComponent,
     ProfileuserComponent,
     GamehistoryComponent,
+    GameComponent,
+    QuestionGeneratorComponent
    ]
 
 })

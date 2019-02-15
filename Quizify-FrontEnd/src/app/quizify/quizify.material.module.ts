@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule, MatGridListModule} from '@angular/material';
+import {MatIconModule, MatGridListModule, MatChipsModule, MatSelectModule, MatCheckboxModule, MatTableModule} from '@angular/material';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatTooltipModule} from '@angular/material/tooltip';
@@ -13,6 +13,10 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatRadioModule} from '@angular/material/radio';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 
@@ -27,6 +31,26 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
        MatInputModule, MatTooltipModule, MatSnackBarModule, MatDialogModule, MatSidenavModule, MatListModule,
        MatGridListModule,
        MatInputModule,
+       MatRadioModule,
+       MatChipsModule,
+       MatSelectModule,
+       RouterModule,
+       FlexLayoutModule,
+       MatButtonModule,
+       MatCheckboxModule,
+       MatIconModule,
+       MatToolbarModule,
+       MatChipsModule,
+       MatCardModule,
+       MatGridListModule,
+       MatTableModule,
+       MatTooltipModule,
+       MatSnackBarModule,
+       MatDialogModule,
+       MatFormFieldModule,
+       MatInputModule,
+       MatSelectModule,
+       FormsModule,
        MatRadioModule
       ] ,
       schemas: [CUSTOM_ELEMENTS_SCHEMA] ,
@@ -39,7 +63,27 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
       MatInputModule, MatTooltipModule, MatSnackBarModule, MatDialogModule, MatSidenavModule, MatListModule,
           MatGridListModule,
-          MatInputModule
+          MatInputModule,
+          MatChipsModule,
+          MatSelectModule,
+          RouterModule,
+          FlexLayoutModule,
+          MatButtonModule,
+          MatCheckboxModule,
+          MatIconModule,
+          MatToolbarModule,
+          MatChipsModule,
+          MatCardModule,
+          MatGridListModule,
+          MatTableModule,
+          MatTooltipModule,
+          MatSnackBarModule,
+          MatDialogModule,
+          MatFormFieldModule,
+          MatInputModule,
+          MatSelectModule,
+          FormsModule,
+          MatRadioModule
 
          ]
 
