@@ -34,6 +34,7 @@
         <module>user-authentication</module>
 	<module>userservice</module>
 	<module>question-manager-service</module>
+        <module>game-manager</module>
     </modules>
     <dependencies>
         <dependency>

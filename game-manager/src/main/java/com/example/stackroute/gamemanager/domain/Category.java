@@ -2,16 +2,15 @@ package com.example.stackroute.gamemanager.domain;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;
-
-import java.util.HashMap;
-import java.util.List;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
-public class Topic {
+public class Category{
     @Id
     private String name;
     private String imageUrl;
     private String timeStamp;
-    private List<Topic> subTopics;
     private Admin admin;
+
+
 }
