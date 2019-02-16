@@ -8,18 +8,18 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Seed2 implements ApplicationListener<ContextRefreshedEvent> {
+public class Seed implements ApplicationListener<ContextRefreshedEvent> {
 
 UserRepository userRepository;
     @Autowired
-    public Seed2(UserRepository userRepository) {
+    public Seed(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
-        userRepository.save(new User("112","ak123","akhila@gmail.com", "Akhila", "{c, c++, java}","F"));
-        userRepository.save(new User("224","hello1","akhil@gmail.com", "Ram", "{c, oops}","M"));
+        userRepository.save(new User("1122","ak123","akhila@gmail.com", "Akhila", "{c, c++, java}","F"));
+        userRepository.save(new User("2244","hello1","akhil@gmail.com", "Ram", "{c, oops}","M"));
 
 
 

@@ -9,7 +9,7 @@
   <input matInput placeholder="Enter your userid" required />
   <mat-hint></mat-hint>
 </mat-form-field>
-
+<br>
   <mat-form-field appearance="outline" class="password">
     <mat-label for = "psw">Password</mat-label>
     <input type = "password"matInput placeholder="Enter your password" name = "psw" required/>
@@ -22,7 +22,7 @@
     <input matInput placeholder="Enter your emailId" />
     <mat-hint></mat-hint>
   </mat-form-field>
-
+<br>
   <mat-form-field appearance="outline" class="username" required>
     <mat-label>UserName</mat-label>
     <input matInput placeholder="Enter your username" />
@@ -30,16 +30,41 @@
   </mat-form-field>
 
    <br>  
-  <!-- <mat-radio-group appearance="outline" class="gender" required>
+<!-- 
+   <div ng-controller="SelectAsyncController" layout="column" layout-align="center center" style="padding:40px" ng-cloak>
+    <p>Select can call an arbitrary function on show. If this function returns a promise, it will display a loading indicator while it is being resolved:</p>
+    <div layout="column" layout-align="center center">
+      <md-select placeholder="select intrests" ng-model="user" md-on-open="loadUsers()" style="min-width: 200px;">
+        <md-option ng-value="user" ng-repeat="user in users">{{user.name}}</md-option>
+      </md-select>
+      <p class="md-caption">You have assigned the task to: {{ user ? user.name : 'No one yet' }}</p>
+    </div>
+  </div> -->
+  <div class="Level-container">
+    <mat-form-field  appearance="outline" class="interests" required>
+      <select matNativeControl required>
+          <option value="select">Interests</option>
+
+        <option value="GK">Gk</option>
+        <option value="Technologies">Technologies</option>
+        <option value="sports">Sports</option>
+        <option value="Entertainment">Entertainment</option>
+    
+      </select>
+    </mat-form-field>
+    </div>
+  <mat-radio-group appearance="outline" class="gender" required>
       <mat-label>Gender</mat-label>
       <mat-radio-button value="1">Male</mat-radio-button>
       <mat-radio-button value="2">Female</mat-radio-button>
     </mat-radio-group>
-    <br> -->
+    <br>
   <br>
   <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
   <br>
 
   
-  <button mat-raised-button="next" class="nextbtn">Register<a href = "#"Register></a></button>
-  <br>
+  <button mat-raised-button="next" class="nextbtn">Register<a href = "#"Register (input)="onClick($event)"></a></button>
+  <br> 
+<!-- <input type = "button" class = "nextbtn" value = "Register" -->
+<!-- <button type="submit" onclick="register()"  class="btn">Register</button> -->
