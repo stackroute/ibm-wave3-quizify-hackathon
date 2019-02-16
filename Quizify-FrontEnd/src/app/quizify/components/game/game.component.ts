@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-//import { Topic } from '../pclasses/topic';
-//import { GameserviceService } from './gameservice.service';
-//import { Router } from '@angular/router';
+// import { Topic } from '../pclasses/topic';
+// import { GameserviceService } from './gameservice.service';
+// import { Router } from '@angular/router';
 
 
 @Component({
