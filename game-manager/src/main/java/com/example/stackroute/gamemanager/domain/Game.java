@@ -18,6 +18,7 @@ public class Game {
     private String name;
     private Category category;
     private int playcount;
+    private int quesNum;
     private List<Question> questions;
     private Admin admin;
     private Topic topic;
@@ -31,6 +32,7 @@ public class Game {
                 ", name='" + name + '\'' +
                 ", category=" + category +
                 ", playcount=" + playcount +
+                ", quesNum=" + quesNum +
                 ", questions=" + questions +
                 ", admin=" + admin +
                 ", topic=" + topic +

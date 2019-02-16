@@ -18,6 +18,12 @@ export class GameserviceService {
    // this.tracksSubject = new BehaviorSubject(this.tracks);
   }
 
+
+  fetchAllGames(categoryName: string, topicName: string) {
+    return this.http
+   .get(this.url + 'categories/' + categoryName + '/' + topicName, { observe: 'response' });
+  }
+
   getGameService() {
     return this.http.get(`${this.url}/gameservice`);
   }
