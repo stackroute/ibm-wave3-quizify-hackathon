@@ -9,7 +9,8 @@ export class Game {
      name: string;
      category: Category;
      playcount: number;
-      questions: Question[];
+     qnum: number;
+     questions: Question[] = new Question[this.qnum];
      admin: Admin;
      topic: Topic;
      level: string;

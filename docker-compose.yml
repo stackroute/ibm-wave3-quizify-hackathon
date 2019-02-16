@@ -102,4 +102,17 @@ services:
       - 8001
 
 
-
+  game-manager:
+    image: game-manager
+    build: game-manager/
+    restart: always
+    network_mode: host
+    depends_on:
+        - mongo
+        - eurekaserver
+        - configserver
+        - apigateway
+    ports:
+        - 8102:8102
+    expose:
+        - 8102

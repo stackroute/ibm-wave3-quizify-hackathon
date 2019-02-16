@@ -19,6 +19,7 @@ const routes: Routes = [
 
   {path: 'game', component: GameComponent},
   {path: 'register', component: RegisterComponent},
+  {path: 'register', component: LoginComponent},
   {path: 'cards', component: CardsComponent},
   {path: 'search', component: SearchComponent},
   { path: 'question', component: QuestionGeneratorComponent }
