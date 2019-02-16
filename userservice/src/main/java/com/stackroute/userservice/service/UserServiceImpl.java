@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
 @Service
 public class UserServiceImpl implements UserService {
     UserRepository userRepository;
@@ -54,7 +53,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
 
-
     public List<User> getUpdateUser() throws UserNotFoundException {
 
         return userRepository.findAll();
@@ -76,4 +74,3 @@ public class UserServiceImpl implements UserService {
     public List<User> getDeleteUser(){
         return userRepository.findAll();
     }*/
-
