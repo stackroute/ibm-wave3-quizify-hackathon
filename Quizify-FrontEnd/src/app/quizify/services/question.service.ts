@@ -20,7 +20,7 @@ export class QuestionService {
   private errorBody: string;
 
   constructor(private http: HttpClient) {
-    this.microServiceUrl = 'http://172.23.239.184:8092/question-manager-service/api/v1/';
+    this.microServiceUrl = 'http://localhost:8092/question-manager-service/api/v1/';
    }
 
    saveQestion(question: Question) {
