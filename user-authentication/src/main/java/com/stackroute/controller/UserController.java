@@ -24,7 +24,7 @@ import java.util.*;
 @RestController
 public class UserController {
     private UserService userService;
-
+ResponseEntity responseEntity;
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
 
@@ -118,20 +118,32 @@ public class UserController {
 
 
     }
-
-
-
-
-
-
-
-
     @GetMapping("user")
     public ResponseEntity<?> getAllUser()
     {
         return new ResponseEntity<List<User>>(userService.getAllUsers(), HttpStatus.OK);
     }
 
+    @PostMapping("users")
+
+    public ResponseEntity<?> saveEvent(@RequestBody User user)  throws UserNameNotFoundException {
+
+        try {
+
+            userService.saveUser(user);
+
+            responseEntity = new ResponseEntity<User>(user, HttpStatus.OK);
+
+        }
+        catch (UserNameNotFoundException ex){
+
+            responseEntity =  new ResponseEntity<>(ex.getMessage(), HttpStatus.OK);
+
+        }
+
+        return responseEntity;
+
+    }
 
 
 

@@ -8,11 +8,14 @@ import { CommonModule } from '@angular/common';
 import { ProfileComponent } from './components/profile/profile.component';
 import { CardsComponent } from './components/cards/cards.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { MatCardModule } from '@angular/material';
+import { MatCardModule, MatCardHeader, MatFormField, MatFormFieldModule, MatInputModule, MatButtonModule } from '@angular/material';
 import { LoginComponent } from './components/login/login.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { SearchComponent } from './components/search/search.component';
+import { HeaderComponent } from './components/header/header.component';
+
+import { BrowserModule } from '@angular/platform-browser';
 @NgModule({
   declarations: [ CardsComponent,
     ProfileComponent,
@@ -21,8 +24,8 @@ import { SearchComponent } from './components/search/search.component';
     SearchComponent,
     ProfileuserComponent,
     GamehistoryComponent,
+    HeaderComponent,
      ],
-
 
   imports: [
     CommonModule,
@@ -30,7 +33,13 @@ import { SearchComponent } from './components/search/search.component';
     MatCardModule,
     QuizifyMaterialModule,
     FormsModule,
-    MatCardModule
+    ReactiveFormsModule,
+    MatCardModule,
+    BrowserModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule
+
 
   ],
   exports: [ CardsComponent,
@@ -39,9 +48,8 @@ import { SearchComponent } from './components/search/search.component';
     LoginComponent,
     SearchComponent,
     ProfileuserComponent,
-    GamehistoryComponent,
+    GamehistoryComponent
    ]
-
 
 })
 export class QuizifyModule { }

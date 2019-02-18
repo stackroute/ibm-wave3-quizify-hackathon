@@ -7,9 +7,7 @@ import { Component, OnInit, Inject } from '@angular/core';
   styleUrls: ['./profileuser.component.scss']
 })
 export class ProfileuserComponent implements OnInit {
-  constructor(){}
-    
-    
-    ngOnInit() {}
- 
-}
+  constructor() {}
+  ngOnInit() {}
+ }
+
