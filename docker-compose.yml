@@ -84,7 +84,7 @@ services:
 
     expose:
 
-      - "8102 76,11         35%"
+      - 8102
 
     image: game-manager
 
