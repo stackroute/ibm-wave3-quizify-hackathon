@@ -13,6 +13,8 @@ import { LoginComponent } from './components/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { SearchComponent } from './components/search/search.component';
+import { GameComponent } from './components/game/game.component';
+import { QuestionGeneratorComponent } from './components/question-generator/question-generator.component';
 import { HeaderComponent } from './components/header/header.component';
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -24,7 +26,9 @@ import { BrowserModule } from '@angular/platform-browser';
     SearchComponent,
     ProfileuserComponent,
     GamehistoryComponent,
-    HeaderComponent,
+    GameComponent,
+    QuestionGeneratorComponent,
+    HeaderComponent
      ],
 
   imports: [
@@ -48,7 +52,9 @@ import { BrowserModule } from '@angular/platform-browser';
     LoginComponent,
     SearchComponent,
     ProfileuserComponent,
-    GamehistoryComponent
+    GamehistoryComponent,
+    GameComponent,
+    QuestionGeneratorComponent
    ]
 
 })

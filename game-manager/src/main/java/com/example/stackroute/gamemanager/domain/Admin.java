@@ -1,12 +1,12 @@
 package com.example.stackroute.gamemanager.domain;
 
+import lombok.Data;
 import org.springframework.data.annotation.Id;
 
-public class User {
-
+@Data
+public class Admin {
     @Id
     private String id;
     private String name;
-    private String timeStamp;
 
 }

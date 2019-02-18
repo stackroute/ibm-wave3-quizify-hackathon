@@ -1,17 +1,23 @@
 package com.example.stackroute.gamemanager.service;
 
 import com.example.stackroute.gamemanager.domain.Game;
+import com.example.stackroute.gamemanager.domain.Question;
 import com.example.stackroute.gamemanager.exception.GameAlreadyExists;
 import com.example.stackroute.gamemanager.exception.GameNotFound;
 
-import java.util.Optional;
+import java.util.List;
+
 
 public interface GameService {
 
    Game saveGame(Game game) throws GameAlreadyExists;
 
-   Optional<Game> deleteGame(String id) throws GameNotFound;
+   Game deleteGame(Game game) throws GameNotFound;
 
    Game updateGame(Game game) throws GameNotFound;
+
+//    List<Game> findByQuizName(String name);
+//
+//    List<Game> findByAlphabet(String alphabet);
 
 }

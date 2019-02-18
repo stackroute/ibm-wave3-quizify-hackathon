@@ -17,66 +17,60 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping(value = "/api/v1")
+@Api(description = "shows the user information")
 
 public class UserController {
     UserService userService;
 
-@Autowired
+    @Autowired
     public UserController(UserService userService) {
-    this.userService = userService;
-}
+        this.userService = userService;
+    }
 
 
+    @ApiOperation(value = "Accepts user into the repository")
+    @PostMapping("/user")
 
-        @PostMapping("/user")
+    public ResponseEntity<?> saveUser(@RequestBody User user) throws UserAlreadyExistException, UserNotFoundException {
+        ResponseEntity responseEntity;
 
-        public ResponseEntity<?> saveUser(@RequestBody User user) throws UserAlreadyExistException, UserNotFoundException {
-            ResponseEntity responseEntity;
-           // try{
-                userService.saveUser(user);
-                responseEntity=new ResponseEntity<String>( "Created", HttpStatus.CREATED);
-          //  }
-            //catch (UserAlreadyExistException exception){
-              //  responseEntity=new ResponseEntity<String>(exception.getMessage(),HttpStatus.CONFLICT);
-            //}
-            return responseEntity;
-        }
+        userService.saveUser(user);
+        responseEntity=new ResponseEntity<String>( "Created", HttpStatus.CREATED);
 
+        return responseEntity;
+    }
+
+    @ApiOperation(value = "Accepts users into the repository")
 
     @GetMapping("/user")
-        public ResponseEntity<?> getAllUser() {
-            return new ResponseEntity<List<User>>(userService.getAllUsers(), HttpStatus.OK);
-        }
-
-
-        @PutMapping("/user")
-    public ResponseEntity<?> UpdateUser(@RequestBody User user) throws UserNotFoundException, UserAlreadyExistException {
-            ResponseEntity responseEntity;
-           // try{
-                userService.saveUser(user);
-                responseEntity=new ResponseEntity<String>( "updated", HttpStatus.CREATED);
-          //  }
-          //  catch (UserAlreadyExistException exception){
-               // responseEntity=new ResponseEntity<String>(exception.getMessage(),HttpStatus.CONFLICT);
-          //  }
-            return responseEntity;
-
-        }
-
-        @DeleteMapping("/user/{id}")
-    public ResponseEntity<?> getDeleteUser( @PathVariable("id") String id){
-            ResponseEntity responseEntity;
-          //  try {
-
-                userService.deleteUser(id);
-                responseEntity = new ResponseEntity<String>("delete", HttpStatus.CREATED);
-          //  } catch (TrackNotFoundException e) {
-              //  responseEntity = new ResponseEntity<String>(e.getMessage(), HttpStatus.CONFLICT);
-           // }
-            return responseEntity;
-
-        }
+    public ResponseEntity<?> getAllUser() {
+        return new ResponseEntity<List<User>>(userService.getAllUsers(), HttpStatus.OK);
     }
+
+    @ApiOperation(value = "Updates user into the repository")
+    @PutMapping("/user")
+    public ResponseEntity<?> UpdateUser(@RequestBody User user) throws UserNotFoundException, UserAlreadyExistException {
+        ResponseEntity responseEntity;
+
+        userService.saveUser(user);
+        responseEntity=new ResponseEntity<String>( "updated", HttpStatus.CREATED);
+
+        return responseEntity;
+
+    }
+    @ApiOperation(value = "Removes the user into the repository")
+    @DeleteMapping("/user/{id}")
+    public ResponseEntity<?> getDeleteUser( @PathVariable("id") String id){
+        ResponseEntity responseEntity;
+
+        userService.deleteUser(id);
+        responseEntity = new ResponseEntity<String>("delete", HttpStatus.CREATED);
+
+        return responseEntity;
+
+    }
+}
 

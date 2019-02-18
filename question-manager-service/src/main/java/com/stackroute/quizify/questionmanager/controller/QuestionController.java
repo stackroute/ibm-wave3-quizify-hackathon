@@ -63,10 +63,6 @@ public class QuestionController {
     @ApiOperation(value = "Get Questions")
     @GetMapping("/categories/{categoryName}/{topicName}/{level}/{numOfQuestions}")
     public ResponseEntity<?> getQuestions(@PathVariable String categoryName, @PathVariable String topicName, @PathVariable String level, @PathVariable int numOfQuestions) {
-        System.out.println(categoryName);
-        System.out.println(topicName);
-        System.out.println(level);
-        System.out.println(numOfQuestions);
         try {
             return new ResponseEntity<List<Question>>(this.questionService.getQuestion(categoryName, topicName, level, numOfQuestions), HttpStatus.OK);
         } catch (NoQuestionFoundException e) {
@@ -74,11 +70,10 @@ public class QuestionController {
         }
     }
 
+
     @ApiOperation(value = "Get All Questions")
     @GetMapping("/categories/{categoryName}/{topicName}")
     public ResponseEntity<?> getAllQuestions(@PathVariable String categoryName, @PathVariable String topicName) {
-        System.out.println(categoryName);
-        System.out.println(topicName);
         try {
             return new ResponseEntity<List<Question>>(this.questionService.getAllQuestions(categoryName, topicName), HttpStatus.OK);
         } catch (NoQuestionFoundException e) {
