@@ -36,23 +36,23 @@ public final class QuestionProducer {
         logger.info("------------------------------------------------------------------------------------------------");
 
         /* Step 4. Send Data -async */
-        producer.send(record);
-//        producer.send(record, new Callback() {
-//            @Override
-//            public void onCompletion(RecordMetadata recordMetadata, Exception e) {
-//                if (e == null) {
-//                    logger.info(
-//                            "Recieved MetdaData : \n" +
-//                            "Topic : " + recordMetadata.topic() + "\n" +
-//                            "Partition : " + recordMetadata.partition() + "\n" +
-//                            "Offset : " + recordMetadata.offset() + "\n" +
-//                            "Timestamp : " + recordMetadata.timestamp()
-//                        );
-//                    } else {
-//                        logger.error("Error While Producing : " + e);
-//                    }
-//                }
-//            });
+//        producer.send(record);
+        producer.send(record, new Callback() {
+            @Override
+            public void onCompletion(RecordMetadata recordMetadata, Exception e) {
+                if (e == null) {
+                    logger.info(
+                            "Recieved MetdaData : \n" +
+                            "Topic : " + recordMetadata.topic() + "\n" +
+                            "Partition : " + recordMetadata.partition() + "\n" +
+                            "Offset : " + recordMetadata.offset() + "\n" +
+                            "Timestamp : " + recordMetadata.timestamp()
+                        );
+                    } else {
+                        logger.error("Error While Producing : " + e);
+                    }
+                }
+            });
 
         /* FLush Data */
         producer.flush();

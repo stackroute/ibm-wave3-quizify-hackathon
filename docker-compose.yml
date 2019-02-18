@@ -124,11 +124,11 @@ services:
     restart: always
     network_mode: host
     depends_on:
+      - kafka
       - mongo
       - eurekaserver
       - configserver
       - apigateway
-      - kafka
     ports:
       - 8001:8001
     expose:
@@ -141,11 +141,11 @@ services:
     restart: always
     network_mode: host
     depends_on:
+        - kafka
         - mongo
         - eurekaserver
         - configserver
         - apigateway
-        - kafka
     ports:
         - 8102:8102
     expose:
