@@ -1,246 +1,153 @@
-version: "3"
-
+version: "2"
 services:
-
-  apigateway:
-
-    build: zuul-gatewayservice/
-
-    depends_on:
-
-      - eurekaserver
-
-    expose:
-
-      - 8092
-
-    image: zuul-service
-
-    network_mode: host
-
+  mysql:
+    image: mysql:5.7
     ports:
-
-      - "8092:8092"
-
-    restart: always
-
-  configserver:
-
-    build: config-server/
-
-    depends_on:
-
-      - eurekaserver
-
-    expose:
-
-      - 8888
-
-    image: "config-servcie:latest"
-
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=Root@123
+      - MYSQL_DATABASE=loginDB
+    container_name: mysql
     network_mode: host
+    hostname: 0.0.0.0
 
+  mongo:
+    image: mongo:3.4-jessie
     ports:
-
-      - "8888:8888"
-
-    restart: always
-
-  eurekaserver:
-
-    build: eureka-server/
-
-    container_name: eureka-server-docker
-
+      - 27017:27017
     expose:
-
-      - 9091
-
-    image: "eureka-servcie:latest"
-
+      - 27017
+    container_name: mongo
     network_mode: host
-
-    ports:
-
-      - "9091:9091"
-
-    restart: always
-
-  game-manager:
-
-    build: game-manager/
-
-    depends_on:
-
-      - kafka
-
-      - mongo
-
-      - eurekaserver
-
-      - configserver
-
-      - apigateway
-
-    expose:
-
-      - 8102
-
-    image: game-manager
-
-    network_mode: host
-
-    ports:
-
-      - "8102:8102"
-
-    restart: always
 
   zookeeper:
-    image: wurstmeister/zookeeper
     container_name: zookeeper
-    hostname: zookeeper
-    network_mode:  host
+    image: wurstmeister/zookeeper
+    restart: always
+    network_mode: host
     ports:
-      - 2181:2181
+      - "2181:2181"
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
-      restart: always
-
   kafka:
-    image: wurstmeister/kafka
     container_name: kafka
+    image: wurstmeister/kafka
+    restart: always
+    mem_limit: 2000000000
     ports:
-      - 9092:9092
-    network_mode:  host
-    environment:
-      KAFKA_ADVERTISED_HOST_NAME: 0.0.0.0
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://0.0.0.0:9092
-      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
+      - "9092"
     depends_on:
       - zookeeper
-
-  mongo:
-
-    container_name: mongo
-
-    expose:
-
-      - 27017
-
-    image: "mongo:3.4-jessie"
-
     network_mode: host
-
-    ports:
-
-      - "27017:27017"
-
-  mysql:
-
-    container_name: mysql
-
     environment:
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+      KAFKA_ADVERTISED_HOST_NAME: localhost
+      KAFKA_ZOOKEEPER_CONNECT: localhost:2181
+      KAFKA_MESSAGE_MAX_BYTES: 1000000000
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
+    # restart: always
 
-      - MYSQL_ROOT_PASSWORD=Root@123
-
-      - MYSQL_DATABASE=loginDB
-
-    image: "mysql:5.7"
-
-    network_mode: host
-
-    ports:
-
-      - "3306:3306"
-
-  question-manager-service:
-
-    build: question-manager-service/
-
-    depends_on:
-
-      - kafka
-
-      - mongo
-
-      - eurekaserver
-
-      - configserver
-
-      - apigateway
-
-    expose:
-
-      - 8001
-
-    image: question-manager-service
-
-    network_mode: host
-
-    ports:
-
-      - "8001:8001"
-
+  apigateway:
+    image: zuul-service
+    build: zuul-gatewayservice/
     restart: always
+    network_mode: host
+    depends_on:
+      - eurekaserver
+      - mysql
+    ports:
+      - 8092:8092
+    expose:
+      - 8092
+
+  eurekaserver:
+    image: eureka-servcie:latest
+    build: eureka-server/
+    restart: always
+    network_mode: host
+    container_name: eureka-server-docker
+    ports:
+      - 9091:9091
+    expose:
+      - 9091
+
+  configserver:
+    image: config-servcie:latest
+    build: config-server/
+    restart: always
+    network_mode: host
+    depends_on:
+      - eurekaserver
+      - mysql
+    ports:
+      - 8888:8888
+    expose:
+      - 8888
+
 
   user-login:
-
+    image: user-service
     build: user-authentication/
-
+    restart: always
+    network_mode: host
     depends_on:
-
       - mysql
-
       - eurekaserver
-
       - configserver
-
       - apigateway
-
+    ports:
+      - 8095:8095
     expose:
-
       - 8095
 
-    image: user-service
-
-    network_mode: host
-
-    ports:
-
-      - "8095:8095"
-
-    restart: always
-
   user-service:
-
+    image: userservice
     build: userservice/
-
+    restart: always
+    network_mode: host
     depends_on:
-
       - mongo
-
       - eurekaserver
-
       - configserver
-
       - apigateway
-
       - kafka
-
+    ports:
+      - 8999:8999
     expose:
-
       - 8999
 
-    image: userservice
 
-    network_mode: host
-
-    ports:
-
-      - "8999:8999"
-
+  question-manager-service:
+    image: question-manager-service
+    build: question-manager-service/
     restart: always
+    network_mode: host
+    depends_on:
+      - kafka
+      - mongo
+      - eurekaserver
+      - configserver
+      - apigateway
+    ports:
+      - 8001:8001
+    expose:
+      - 8001
+
+
+  game-manager:
+    image: game-manager
+    build: game-manager/
+    restart: always
+    network_mode: host
+    depends_on:
+      - kafka
+      - mongo
+      - eurekaserver
+      - configserver
+      - apigateway
+    ports:
+      - 8102:8102
+    expose:
+      - 8102
