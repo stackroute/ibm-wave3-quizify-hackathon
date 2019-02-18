@@ -1,3 +1,4 @@
+
 import { LoginComponent } from './quizify/components/login/login.component';
 import { ProfileComponent } from './quizify/components/profile/profile.component';
 import { NgModule } from '@angular/core';
@@ -9,6 +10,7 @@ import { RegisterComponent } from './quizify/components/register/register.compon
 import { CardsComponent } from './quizify/components/cards/cards.component';
 import { SearchComponent } from './quizify/components/search/search.component';
 import { QuestionGeneratorComponent } from './quizify/components/question-generator/question-generator.component';
+
 
 const routes: Routes = [
    { path: 'profile' , component: ProfileComponent },

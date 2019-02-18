@@ -6,6 +6,8 @@ import com.stackroute.jwt.SecurityTokenGenrator;
 import com.stackroute.service.UserService;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +26,7 @@ import java.util.*;
 @RestController
 public class UserController {
     private UserService userService;
-
+ResponseEntity responseEntity;
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
 
@@ -34,7 +36,7 @@ public class UserController {
         this.userService = userService;
     }
 
-
+    @ApiOperation(value = "Accept user into repository and generating token")
     @PostMapping("user")
     public ResponseEntity  login(@RequestBody User loginDetails) throws ServletException {
 
@@ -118,20 +120,33 @@ public class UserController {
 
 
     }
-
-
-
-
-
-
-
-
+    @ApiOperation(value = "Gets all the user details(userId,password,role)")
     @GetMapping("user")
     public ResponseEntity<?> getAllUser()
     {
         return new ResponseEntity<List<User>>(userService.getAllUsers(), HttpStatus.OK);
     }
 
+    @ApiOperation(value = "It saves all the user details")
+    @PostMapping("users")
+    public ResponseEntity<?> saveEvent(@RequestBody User user)  throws UserNameNotFoundException {
+
+        try {
+
+            userService.saveUser(user);
+
+            responseEntity = new ResponseEntity<User>(user, HttpStatus.OK);
+
+        }
+        catch (UserNameNotFoundException ex){
+
+            responseEntity =  new ResponseEntity<>(ex.getMessage(), HttpStatus.OK);
+
+        }
+
+        return responseEntity;
+
+    }
 
 
 
