@@ -9,6 +9,11 @@ import { MatCardModule } from '@angular/material';
 import {MatSelectModule} from '@angular/material/select';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { QuizifyMaterialModule } from './quizify/quizify.material.module';
+import { FormsModule } from '@angular/forms';
+import { QuestionService } from './quizify/services/question.service';
+import { GameserviceService } from './quizify/services/gameservice.service';
+
 
 @NgModule({
   declarations: [
@@ -23,8 +28,9 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     HttpClientModule
   ],
+  providers: [QuestionService,
+  GameserviceService] ,
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-  providers: [],
 
   bootstrap: [AppComponent]
 })

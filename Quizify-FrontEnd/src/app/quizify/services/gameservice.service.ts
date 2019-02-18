@@ -13,7 +13,7 @@ export class GameserviceService {
 
   constructor(private http: HttpClient) {
     this.format = '&format=json';
-    this.url = 'http://localhost:8102/api/v1/';
+    this.url = 'http://localhost:8102/game-manager-service/api/v1/';
 
    // this.tracksSubject = new BehaviorSubject(this.tracks);
   }
@@ -46,7 +46,4 @@ export class GameserviceService {
     console.log( game);
     return this.http.delete(this.url + 'tracks/track/' + game, { observe: 'response' });
   }
-
-
-
 }
