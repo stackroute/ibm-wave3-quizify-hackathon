@@ -73,6 +73,13 @@ export class GameComponent implements OnInit {
 
       this.currentTopic = this.topic2;
       this.category = this.gamecategory;
+
+
+      this.levels = [
+        {value: 'easy', viewValue: 'Easy'},
+        {value: 'medium', viewValue: 'Medium'},
+        {value: 'hard', viewValue: 'Hard'}
+      ];
    }
 
   ngOnInit() {
@@ -84,7 +91,7 @@ export class GameComponent implements OnInit {
       this.selectedLevel === '' ||
       this.questionNumber === ''
       ) {
-        this.snackBar.open('Please Fill All The Fields!', '', {duration: 1500});
+        this.snackBar.open('Please Fill All The Fields!', '', {duration: 500});
      } else {
       this.game = new Game();
       this.game.id = '' + Date.now();
