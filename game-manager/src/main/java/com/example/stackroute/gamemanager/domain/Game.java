@@ -6,34 +6,38 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Arrays;
+import java.util.List;
 
 
 @Data
-@Document(collection="game")
+@Document(collection="games")
 public class Game {
 
     @Id
-   private String id;
+    private String id;
     private String name;
-    private String timelimit;
-   private Topic[] topic;
-   private int playcount;
+    private Category category;
+    private int playcount;
+    private int quesNum;
+    private List<Question> questions;
+    private Admin admin;
+    private Topic topic;
+    private String level;
+
 
     @Override
     public String toString() {
         return "Game{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
-                ", timelimit='" + timelimit + '\'' +
-                ", topic=" + Arrays.toString(topic) +
+                ", category=" + category +
                 ", playcount=" + playcount +
+                ", quesNum=" + quesNum +
+                ", questions=" + questions +
+                ", admin=" + admin +
+                ", topic=" + topic +
                 ", level='" + level + '\'' +
-                ", questions=" + Arrays.toString(questions) +
                 '}';
     }
 
-    private  String level;
-    private Question[] questions;
-
-    private User user;
 }

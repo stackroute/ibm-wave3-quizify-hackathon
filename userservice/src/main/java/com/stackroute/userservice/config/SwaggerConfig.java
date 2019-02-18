@@ -11,14 +11,15 @@ import static springfox.documentation.builders.PathSelectors.regex;
 
 @EnableSwagger2
 @Configuration
-public class SwaggerConfig
+public class
+SwaggerConfig
 {
     @Bean
     public Docket productApi()
     {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.stackroute.userservice"))
+                .apis(RequestHandlerSelectors.basePackage("com.stackroute.userservice.controller"))
                 .paths(regex("/api/v1.*"))
                 .build();
     }

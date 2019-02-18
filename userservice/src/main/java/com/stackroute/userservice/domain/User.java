@@ -20,18 +20,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor
 public class User {
     @Id
-    //  @GeneratedValue
-   
     private String userId;
-    // @ApiModelProperty(notes="name of track")
     private String password;
-    //   @ApiModelProperty(notes = "comments on track")
+    private String confirmpassword;
     private String emailId;
-    private String userName;
     private String Intrests;
     private String gender;
-
-
-
-
 }

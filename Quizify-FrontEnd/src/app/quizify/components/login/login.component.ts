@@ -1,46 +1,44 @@
+import { AuthenticationService } from './../../services/authentication.service';
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../.././auth.service' ;
 import { Router } from '@angular/router' ;
+import { first } from 'rxjs/operators' ;
+import { HttpErrorResponse } from '@angular/common/http';
+import { FormBuilder, Validators } from '@angular/forms';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent  {
+  isLoginError: boolean ;
+  user = this.fb.group({ // for reactive groups, we are creating form builder groups which is where we create
+    // one group and add multiple properties
+  userId: ['', Validators.required],
+  password: ['', Validators.required]
+});
 
-  // loginUserData = { };
- userId: string;
- password: string;
- Router: any;
-constructor(private auth: AuthService,   private _router: Router) { }
+constructor(private fb: FormBuilder, private loginService: AuthenticationService, private router: Router) { } // using router
+// to reroute valid logged in user to some other page
 
-
-ngOnInit() {
+login() {
+  this.loginService.login(this.user.value)
+  .subscribe(res => {
+    console.log('Res: ', res);
+    if (res.message === 'User successfully logged in') {
+      this.router.navigate([`/profile`]);
+      this.loginService.setCookie('token', res.token, 1);
+      // this.loginService.setCookie('message', res.message, 1);
+      // let token = this.loginService.getCookie('token');
+    } else {
+      console.log('you entered the wrong credentials');
+      window.alert('Credentials you entered are incorrect');
+    }
+  });
 }
+
 }
-// login() {
-//   this.auth.login(this.userId, this.password)
-//   .subscribe(
-//     data => {
-//       this._router.navigate(['**']);
-//     },
-//     (error) => {
-//     });
-//   }
-// }
-
-// loginUser() {
-  // console.log(this.loginUserData);
-  // this._auth.loginUser(this.loginUserData)
-  // .subscribe(
-  //   res => {
-  // localStorage.setItem('token', res.token);
-  //  res => console.log(res);
-  //   },
-  // err => console.log(err)
-  // );
 
 
-//
+
 
 

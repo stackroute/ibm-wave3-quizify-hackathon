@@ -2,7 +2,6 @@ package com.stackroute.userservice.globalexception;
 
 
 
-//import com.stackroute.userservice.exceptions.UserAlreadyExistsException;
 import com.stackroute.userservice.exceptions.UserAlreadyExistException;
 import com.stackroute.userservice.exceptions.UserNotFoundException;
 import org.springframework.http.HttpStatus;
@@ -15,16 +14,13 @@ public class GlobalException
 {
     @ResponseStatus(value = HttpStatus.CONFLICT, reason="User already exists")
     @ExceptionHandler(UserAlreadyExistException.class)
-    public void handleSongAlreadyExistsException(UserAlreadyExistException exc1)
+    public void handleUserAlreadyExistsException(UserAlreadyExistException exc1)
     {
-        //log.error("Song already exists");
     }
 
     @ResponseStatus(value = HttpStatus.NOT_FOUND, reason="User does not exist")
     @ExceptionHandler(UserNotFoundException.class)
-    public void handleSongNotFoundException(UserNotFoundException exc2)
+    public void handleUserNotFoundException(UserNotFoundException exc2)
     {
-        //log.error("User does not exist");
     }
 }
-
