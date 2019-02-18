@@ -9,7 +9,8 @@ export class RegisterService {
    get: any;
 constructor(private http: HttpClient ) {}
   register(searchText: string) {
-   this.http.get('http://localhost:8999/api/v1/user').subscribe(resp => {
+     console.log('hi');
+   this.http.get('https://localhost:8999/api/v1/user').subscribe(resp => {
        console.log(resp);
    this.response = resp;
        });

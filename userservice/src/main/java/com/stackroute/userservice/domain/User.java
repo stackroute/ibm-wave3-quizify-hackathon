@@ -22,8 +22,8 @@ public class User {
     @Id
     private String userId;
     private String password;
+    private String confirmpassword;
     private String emailId;
-    private String userName;
     private String Intrests;
     private String gender;
 }
