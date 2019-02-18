@@ -115,7 +115,6 @@ public class QuestionServiceImplTest {
     public void addNewQuestionSuccessTest() throws QuestionAlreadyExistsException {
         when(this.questionRepository.existsById((String)any())).thenReturn(false);
         when(this.questionRepository.save((Question)any())).thenReturn(this.question);
-
         Question savedQuestion = this.questionService.addNewQuestion(this.question);
         assertEquals(this.question, savedQuestion);
 
