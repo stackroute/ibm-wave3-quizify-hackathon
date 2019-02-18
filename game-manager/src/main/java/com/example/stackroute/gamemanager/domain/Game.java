@@ -14,30 +14,30 @@ import java.util.List;
 public class Game {
 
     @Id
-    private String id;
+//    private String id;
     private String name;
     private Category category;
-    private int playcount;
-    private int quesNum;
+    private Topic topic;
+    private int playCount;
+    private int numOfQuestion;
     private List<Question> questions;
     private Admin admin;
-    private Topic topic;
     private String level;
 
 
-    @Override
-    public String toString() {
-        return "Game{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", category=" + category +
-                ", playcount=" + playcount +
-                ", quesNum=" + quesNum +
-                ", questions=" + questions +
-                ", admin=" + admin +
-                ", topic=" + topic +
-                ", level='" + level + '\'' +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "Game{" +
+//                "id='" + id + '\'' +
+//                ", name='" + name + '\'' +
+//                ", category=" + category +
+//                ", playcount=" + playcount +
+//                ", quesNum=" + quesNum +
+//                ", questions=" + questions +
+//                ", admin=" + admin +
+//                ", topic=" + topic +
+//                ", level='" + level + '\'' +
+//                '}';
+//    }
 
 }

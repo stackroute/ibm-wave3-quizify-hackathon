@@ -9,7 +9,7 @@ public class Category{
     @Id
     private String name;
     private String imageUrl;
-    private String timeStamp;
+    private long timeStamp;
     private Admin admin;
 
 

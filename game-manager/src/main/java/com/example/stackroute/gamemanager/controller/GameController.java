@@ -17,6 +17,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.springframework.boot.web.servlet.server.Session.SessionTrackingMode.URL;
@@ -42,53 +43,63 @@ public class GameController {
     public ResponseEntity<?> saveGame(@RequestBody Game game) throws GameAlreadyExists {
 
         try {
-            gameService.saveGame(game);
-            responseEntity = new ResponseEntity(game, HttpStatus.CREATED);
+            return new ResponseEntity<Game>(gameService.saveGame(game), HttpStatus.OK);
         }
         catch(GameAlreadyExists e)
         {
-           responseEntity = new ResponseEntity(e.getMessage(),HttpStatus.CONFLICT) ;
+           return new ResponseEntity<String>(e.getMessage(),HttpStatus.CONFLICT) ;
         }
-        return responseEntity;
     }
     @ApiOperation(value = "Delete Game")
-    @DeleteMapping("games/game")
+    @DeleteMapping("/games/game")
     public ResponseEntity<?> deleteGame(@RequestBody Game game) throws GameNotFound
     {
         try {
-            gameService.deleteGame(game);
-            responseEntity = new ResponseEntity("Game deleted", HttpStatus.OK);
+            return new ResponseEntity<Game>(gameService.deleteGame(game), HttpStatus.OK);
         }
         catch(GameNotFound e){
-            responseEntity = new ResponseEntity(e.getMessage(),HttpStatus.CONFLICT);
+            return new ResponseEntity<String>(e.getMessage(),HttpStatus.NOT_FOUND) ;
         }
-      return responseEntity;
 
     }
     @ApiOperation(value = "Updating Game")
-    @PutMapping("games/game")
+    @PutMapping("/games/game")
     public ResponseEntity<?> updateGame(Game updatedGame) throws GameNotFound{
 
         try {
-            gameService.updateGame(updatedGame);
-            responseEntity = new ResponseEntity("updated game", HttpStatus.CREATED);
+            return new ResponseEntity<Game>(gameService.updateGame(updatedGame), HttpStatus.OK);
         }
         catch (GameNotFound e)
         {
-           responseEntity = new ResponseEntity(e.getMessage(),HttpStatus.CONFLICT);
+            return new ResponseEntity<String>(e.getMessage(),HttpStatus.NOT_FOUND) ;
         }
-    return responseEntity;
 
     }
 
 
-
-    @GetMapping(value = "/games/game")
-    public Game createGame(Game createdGame)
+    @GetMapping(value = "/games/game/{gameName}")
+    public ResponseEntity<?> getGame(String gameName)
     {
-        final String url = "http://172.23.239.184:8001/api/v1/categories/Dummy_Category/Dummy_Topic/easy/2";
-        Game result = restTemplate.getForObject(url, Game.class);
-        responseEntity = new ResponseEntity("get game question", HttpStatus.CREATED);
-        return result;
+        try
+        {
+            Game game = gameService.getGame(gameName);
+            String url = "http://localhost:8001/api/v1//categories/" +
+                    game.getCategory().getName()+"/"+
+                    game.getTopic().getName()+"/"+
+                    game.getLevel()+"/"+
+                    game.getNumOfQuestion();
+            List<Question> questionList = new ArrayList<>();
+            questionList = restTemplate.getForObject(url, questionList.getClass());
+            game.setQuestions(questionList);
+
+            return new ResponseEntity<Game>(game,HttpStatus.OK) ;
+        }
+        catch (GameNotFound e) {
+            return new ResponseEntity<String>(e.getMessage(),HttpStatus.NOT_FOUND) ;
+        }
+//        final String url = "http://localhost:8001/api/v1//categories/{categoryName}/{topicName}/{level}/{numOfQuestions}";
+//        Game result = restTemplate.getForObject(url, Game.class);
+//        responseEntity = new ResponseEntity("get game question", HttpStatus.CREATED);
+//        return result;
     }
 }

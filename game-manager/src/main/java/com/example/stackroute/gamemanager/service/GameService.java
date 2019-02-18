@@ -16,8 +16,10 @@ public interface GameService {
 
    Game updateGame(Game game) throws GameNotFound;
 
-//    List<Game> findByQuizName(String name);
-//
-//    List<Game> findByAlphabet(String alphabet);
+   Game getGame(String getName) throws GameNotFound;
+
+   List<Game> findAllGames(String categoryName, String topicName)throws GameNotFound;
+
+   List<Game> searchGame(String gameName)throws GameNotFound;
 
 }

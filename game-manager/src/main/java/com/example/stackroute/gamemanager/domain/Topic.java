@@ -11,7 +11,7 @@ public class Topic {
     @Id
     private String name;
     private String imageUrl;
-    private String timeStamp;
+    private long timeStamp;
     private List<Topic> subTopics;
     private Admin admin;
 }
