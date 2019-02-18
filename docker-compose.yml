@@ -112,7 +112,7 @@ services:
 
       KAFKA_ZOOKEEPER_CONNECT: "zookeeper:2181"
 
-      environment: ~
+      environment:
 
     image: wurstmeister/kafka
 
