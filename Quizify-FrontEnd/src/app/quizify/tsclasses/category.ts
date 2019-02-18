@@ -4,5 +4,5 @@ export class Category {
      name: string;
       imageUrl: string;
      timeStamp: string;
-     Admin: Admin;
+     admin: Admin;
 }
