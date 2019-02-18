@@ -8,8 +8,8 @@ services:
       - MYSQL_ROOT_PASSWORD=Root@123
       - MYSQL_DATABASE=loginDB
     container_name: mysql
-    network_mode: host
-    hostname: localhost
+#    network_mode: host
+#    hostname: localhost
 
   mongo:
     image: mongo:3.4-jessie
@@ -18,7 +18,7 @@ services:
     expose:
       - 27017
     container_name: mongo
-    network_mode: host
+#    network_mode: host
 
   zookeeper:
     image: wurstmeister/zookeeper
@@ -52,7 +52,7 @@ services:
     image: zuul-service
     build: zuul-gatewayservice/
     restart: always
-    network_mode: host
+#    network_mode: host
     depends_on:
     - eurekaserver
     - mysql
@@ -65,7 +65,7 @@ services:
     image: eureka-servcie:latest
     build: eureka-server/
     restart: always
-    network_mode: host
+#    network_mode: host
     container_name: eureka-server-docker
     ports:
     - 9091:9091
@@ -76,7 +76,7 @@ services:
       image: config-servcie:latest
       build: config-server/
       restart: always
-      network_mode: host
+#      network_mode: host
       depends_on:
       - eurekaserver
       - mysql
@@ -90,7 +90,7 @@ services:
     image: user-service
     build: user-authentication/
     restart: always
-    network_mode: host
+#    network_mode: host
     depends_on:
       - mysql
       - eurekaserver
@@ -105,7 +105,7 @@ services:
     image: userservice
     build: userservice/
     restart: always
-    network_mode: host
+#    network_mode: host
     depends_on:
       - mongo
       - eurekaserver
@@ -122,7 +122,7 @@ services:
     image: question-manager-service
     build: question-manager-service/
     restart: always
-    network_mode: host
+#    network_mode: host
     depends_on:
       - kafka
       - mongo
@@ -139,7 +139,7 @@ services:
     image: game-manager
     build: game-manager/
     restart: always
-    network_mode: host
+#    network_mode: host
     depends_on:
         - kafka
         - mongo
