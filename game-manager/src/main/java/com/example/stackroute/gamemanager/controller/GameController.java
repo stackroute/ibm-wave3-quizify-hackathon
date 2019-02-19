@@ -64,7 +64,7 @@ public class GameController {
     }
     @ApiOperation(value = "Updating Game")
     @PutMapping("/games/game")
-    public ResponseEntity<?> updateGame(Game updatedGame) throws GameNotFound{
+    public ResponseEntity<?> updateGame(@RequestBody Game updatedGame) throws GameNotFound{
 
         try {
             return new ResponseEntity<Game>(gameService.updateGame(updatedGame), HttpStatus.OK);
@@ -76,20 +76,21 @@ public class GameController {
 
     }
 
-
+    @ApiOperation(value = "Get Game")
     @GetMapping(value = "/games/game/{gameName}")
-    public ResponseEntity<?> getGame(String gameName)
+    public ResponseEntity<?> getGame(@PathVariable String gameName)
     {
         try
         {
             Game game = gameService.getGame(gameName);
-            String url = "http://localhost:8001/api/v1//categories/" +
+            String url = "http://13.232.243.68:8001/api/v1/categories/" +
                     game.getCategory().getName()+"/"+
                     game.getTopic().getName()+"/"+
                     game.getLevel()+"/"+
                     game.getNumOfQuestion();
             List<Question> questionList = new ArrayList<>();
             questionList = restTemplate.getForObject(url, questionList.getClass());
+
             game.setQuestions(questionList);
 
             return new ResponseEntity<Game>(game,HttpStatus.OK) ;
