@@ -12,7 +12,7 @@ export class AuthenticationService {
   constructor(private http: HttpClient, private router: Router) {
   }
 
-  private loginUrl = 'http://localhost:8095/api/user';  // URL to web api
+  private loginUrl = 'http://0.0.0.0:8095/api/user';  // URL to web api
 
 
   login(user: any): Observable<any> {
@@ -63,7 +63,7 @@ export class AuthenticationService {
 
 
     // userId: string, password: string
-    // return this.http.post<any>('http://localhost:8095/api/user', {userId: userId, password: password, role: 'user'})
+    // return this.http.post<any>('http://0.0.0.0:8095/api/user', {userId: userId, password: password, role: 'user'})
     //    // this is just the HTTP call,
     //    // we still need to handle the reception of the token
     //    // .shareReplay();
