@@ -154,9 +154,9 @@ services:
     #FRONT END
 
   quizify-front-end:
-    build:  Quizify-FrontEnd/
-    image:  quizify-front-end
-    container_name:  quizify-front-end
+    image: quizify-front-end
+    build: Quizify-FrontEnd/
+    container_name: quizify-front-end
     network_mode: "host"
     hostname: 0.0.0.0
     ports:
