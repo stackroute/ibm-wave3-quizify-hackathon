@@ -162,5 +162,3 @@ services:
     ports:
       - 4200:4200
     restart: always
-    healthcheck:
-      test: "exit 0"
