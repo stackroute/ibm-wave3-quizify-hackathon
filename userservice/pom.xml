@@ -73,8 +73,12 @@
 			<version>5.1.4.RELEASE</version>
 			<scope>compile</scope>
 		</dependency>
+        <dependency>
+            <groupId>javax.persistence</groupId>
+            <artifactId>javax.persistence-api</artifactId>
+        </dependency>
 
-	</dependencies>
+    </dependencies>
 
 
 	<build>
