@@ -9,9 +9,9 @@
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 	<groupId>com.example.stackroute</groupId>
-	<artifactId>game-manager</artifactId>
+	<artifactId>game-manager-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>game-manager</name>
+	<name>game-manager-service</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
