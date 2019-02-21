@@ -1,0 +1,28 @@
+{
+    "quiz":[
+  {
+    "GameId":"Id=1",
+    "Name": "Entertainment",
+    "Duration": "30 min",
+    "Description": "QUIZ",
+    "Level": "Easy",
+    "image_Url": "https://e3.365dm.com/18/10/1600x900/skynews-quiz-time_4458210.jpg?20181019225508",
+    "Geners":"",
+    "topic":"",
+    "Domain":""
+  },
+  {
+    "GameId":"Id=2",
+    "Name": "Entertainment",
+    "Duration": "30 min",
+    "Description": "QUIZ",
+    "Level": "Easy",
+    "image_Url": "https://media.istockphoto.com/videos/pub-quiz-neon-sign-mounted-on-brick-wall-video-id918061080?s=640x640",
+    "Geners":"",
+    "topic":"",
+    "Domain":""
+  }
+  
+    ]
+    
+  }
