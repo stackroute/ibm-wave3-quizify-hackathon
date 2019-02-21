@@ -36,6 +36,7 @@ public final class QuestionProducer {
         logger.info("------------------------------------------------------------------------------------------------");
 
         /* Step 4. Send Data -async */
+//        producer.send(record);
         producer.send(record, new Callback() {
             @Override
             public void onCompletion(RecordMetadata recordMetadata, Exception e) {

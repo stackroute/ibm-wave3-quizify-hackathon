@@ -1,3 +1,4 @@
+import { CardService } from './services/card.service';
 import { GamehistoryComponent } from './components/gamehistory/gamehistory.component';
 import { ProfileuserComponent } from './components/profileuser/profileuser.component';
 import { MatRadioModule } from '@angular/material/radio';
@@ -19,6 +20,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { GamedetailsService } from './services/gamedetails.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { GamedetailsComponent } from './components/gamedetails/gamedetails.component';
+
 @NgModule({
   declarations: [ CardsComponent,
     ProfileComponent,
@@ -30,9 +32,14 @@ import { GamedetailsComponent } from './components/gamedetails/gamedetails.compo
     GameComponent,
     QuestionGeneratorComponent,
     HeaderComponent,
+<<<<<<< HEAD
     GamedetailsComponent,
     
+=======
+
+>>>>>>> 9b4b47c9c4b4e3d9a998a3219a723e27dab12efd
      ],
+     providers: [ CardService],
 
   imports: [
     CommonModule,

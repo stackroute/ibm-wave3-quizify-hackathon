@@ -42,6 +42,8 @@ export class GameComponent implements OnInit {
     private selectedLevel = '';
     private questionNumber = '';
     private statusCode: number;
+    private gameName: string;
+
 
   constructor(private gameService: GameserviceService, private snackBar: MatSnackBar) {
       // Dummy Data For Admin Class
@@ -94,10 +96,12 @@ export class GameComponent implements OnInit {
         this.snackBar.open('Please Fill All The Fields!', '', {duration: 500});
      } else {
       this.game = new Game();
-      this.game.id = '' + Date.now();
+      this.game.name =  this.gameName;
       this.game.topic = this.currentTopic;
       this.game.category = this.gamecategory;
       this.game.level = this.selectedLevel;
+      this.game.numOfQuestion = Number(this.questionNumber);
+      this.game.playcount = 0;
       this.game.admin = this.admin;
       console.log(this.game);
       this.addGame(this.game);
@@ -125,10 +129,8 @@ export class GameComponent implements OnInit {
         }
     });
 
-    console.log(this.gameService.fetchAllGames(this.gamecategory.name, this.currentTopic.name));
-
+    // console.log(this.gameService.fetchAllGames(this.gamecategory.name, this.currentTopic.name));
 
   }
-
 
 }
