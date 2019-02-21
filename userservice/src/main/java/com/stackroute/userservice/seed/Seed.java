@@ -18,11 +18,8 @@ UserRepository userRepository;
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
-        userRepository.save(new User("1122","ak123","akhila@gmail.com", "Akhila", "{c, c++, java}","F"));
-        userRepository.save(new User("2244","hello1","akhil@gmail.com", "Ram", "{c, oops}","M"));
-
-
-
+//        userRepository.save(new User("1122","akhila","ak123","ak123", "akhila@gmail.com", "{("Movies"), ("TvShows")}", "F"));
+//        userRepository.save(new User("2244","akhil","hello1","hello1", "akhila@gmail.com", {("Movies"), ("TvShows")},"M"));
 
     }
 }
