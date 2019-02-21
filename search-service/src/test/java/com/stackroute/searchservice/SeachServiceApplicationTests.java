@@ -1,4 +1,4 @@
-//package com.stackroute.seachService;
+//package com.stackroute.searchservice;
 //
 //import org.junit.Test;
 //import org.junit.runner.RunWith;
