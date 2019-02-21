@@ -16,8 +16,9 @@ import { SearchComponent } from './components/search/search.component';
 import { GameComponent } from './components/game/game.component';
 import { QuestionGeneratorComponent } from './components/question-generator/question-generator.component';
 import { HeaderComponent } from './components/header/header.component';
-
+import { GamedetailsService } from './services/gamedetails.service';
 import { BrowserModule } from '@angular/platform-browser';
+import { GamedetailsComponent } from './components/gamedetails/gamedetails.component';
 @NgModule({
   declarations: [ CardsComponent,
     ProfileComponent,
@@ -28,7 +29,9 @@ import { BrowserModule } from '@angular/platform-browser';
     GamehistoryComponent,
     GameComponent,
     QuestionGeneratorComponent,
-    HeaderComponent
+    HeaderComponent,
+    GamedetailsComponent,
+    
      ],
 
   imports: [
@@ -42,7 +45,8 @@ import { BrowserModule } from '@angular/platform-browser';
     BrowserModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+
 
 
   ],
@@ -54,8 +58,10 @@ import { BrowserModule } from '@angular/platform-browser';
     ProfileuserComponent,
     GamehistoryComponent,
     GameComponent,
-    QuestionGeneratorComponent
-   ]
+    QuestionGeneratorComponent,
+    GamedetailsComponent
+   ],
+   providers: [ GamedetailsService ],
 
 })
 export class QuizifyModule { }
