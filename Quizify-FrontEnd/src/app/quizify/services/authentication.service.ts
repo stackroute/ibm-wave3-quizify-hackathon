@@ -12,7 +12,7 @@ export class AuthenticationService {
   constructor(private http: HttpClient, private router: Router) {
   }
 
-  private loginUrl = 'http://localhost:8095/api/user';  // URL to web api
+  private loginUrl = 'http://0.0.0.0:8095/api/user';  // URL to web api
 
 
   login(user: any): Observable<any> {
@@ -49,7 +49,7 @@ export class AuthenticationService {
   //   console.log(userId + '' + password);
   //   const data = 'userId= ' + userId + '&password=' + password ;
   //   const reqHeader = new HttpHeaders({ 'Content-Type': 'application/json' });
-  //   return this.http.post('http://localhost:8095/api/user' , data, { headers: reqHeader });
+  //   return this.http.post('http://13.232.243.68:8095/api/user' , data, { headers: reqHeader });
 }
   // loginUser(userId: string, password: string ) {
   //   console.log('be confident jasss');
@@ -63,7 +63,7 @@ export class AuthenticationService {
 
 
     // userId: string, password: string
-    // return this.http.post<any>('http://localhost:8095/api/user', {userId: userId, password: password, role: 'user'})
+    // return this.http.post<any>('http://13.232.243.68:8095/api/user', {userId: userId, password: password, role: 'user'})
     //    // this is just the HTTP call,
     //    // we still need to handle the reception of the token
     //    // .shareReplay();

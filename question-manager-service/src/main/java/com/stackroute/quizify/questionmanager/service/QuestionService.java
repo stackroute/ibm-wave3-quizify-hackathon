@@ -35,6 +35,7 @@ public interface QuestionService {
     Question updateQuestion(Question question) throws QuestionDoesNotExistException;
     Question removeQuestion(Question question) throws QuestionDoesNotExistException;
 
+
     List<Question> getQuestion(String categoryName, String topicName, String level, int numOfQuestions) throws NoQuestionFoundException;
     List<Question> getAllQuestions(String categoryName, String topicName) throws NoQuestionFoundException;
 }
