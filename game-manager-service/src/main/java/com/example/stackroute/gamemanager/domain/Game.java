@@ -14,7 +14,7 @@ import java.util.List;
 public class Game {
 
     @Id
-//    private String id;
+    private String id;
     private String name;
     private Category category;
     private Topic topic;
