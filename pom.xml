@@ -32,9 +32,9 @@
         <module>eventbrite-service</module>
         <module>search-service</module>
         <module>user-authentication</module>
-	    <module>userservice</module>
-	<module>question-manager-service</module>
-        <module>game-manager</module>
+	    <module>user-registration-service</module>
+	    <module>question-manager-service</module>
+        <module>game-manager-service</module>
     </modules>
     <dependencies>
         <dependency>
