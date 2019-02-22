@@ -1,15 +1,14 @@
-package com.example.stackroute.gamemanager.service;
+package com.stackroute.quizify.gamemanager.service;
 
-import com.example.stackroute.gamemanager.domain.Game;
-import com.example.stackroute.gamemanager.exception.GameAlreadyExists;
-import com.example.stackroute.gamemanager.exception.GameNotFound;
-import com.example.stackroute.gamemanager.producer.GameProducer;
-import com.example.stackroute.gamemanager.repository.GameRepository;
+import com.stackroute.quizify.gamemanager.domain.Game;
+import com.stackroute.quizify.gamemanager.exception.GameAlreadyExists;
+import com.stackroute.quizify.gamemanager.exception.GameNotFound;
+import com.stackroute.quizify.gamemanager.producer.GameProducer;
+import com.stackroute.quizify.gamemanager.repository.GameRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 import java.util.Optional;

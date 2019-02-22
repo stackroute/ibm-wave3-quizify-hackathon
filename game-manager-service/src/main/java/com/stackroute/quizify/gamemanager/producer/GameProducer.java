@@ -1,6 +1,6 @@
-package com.example.stackroute.gamemanager.producer;
+package com.stackroute.quizify.gamemanager.producer;
 
-import com.example.stackroute.gamemanager.domain.Game;
+import com.stackroute.quizify.gamemanager.domain.Game;
 import com.google.gson.Gson;
 import org.apache.kafka.clients.producer.*;
 import org.apache.kafka.common.serialization.StringSerializer;

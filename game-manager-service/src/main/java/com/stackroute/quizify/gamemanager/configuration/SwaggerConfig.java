@@ -1,4 +1,4 @@
-package com.example.stackroute.gamemanager.configuration;
+package com.stackroute.quizify.gamemanager.configuration;
 
 
 import org.springframework.context.annotation.Bean;

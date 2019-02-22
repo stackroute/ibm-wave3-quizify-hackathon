@@ -1,26 +1,21 @@
-package com.example.stackroute.gamemanager.controller;
+package com.stackroute.quizify.gamemanager.controller;
 
 
-import com.example.stackroute.gamemanager.domain.Game;
-import com.example.stackroute.gamemanager.domain.Question;
-import com.example.stackroute.gamemanager.exception.GameAlreadyExists;
-import com.example.stackroute.gamemanager.exception.GameNotFound;
-import com.example.stackroute.gamemanager.service.GameService;
+import com.stackroute.quizify.gamemanager.domain.Game;
+import com.stackroute.quizify.gamemanager.domain.Question;
+import com.stackroute.quizify.gamemanager.exception.GameAlreadyExists;
+import com.stackroute.quizify.gamemanager.exception.GameNotFound;
+import com.stackroute.quizify.gamemanager.service.GameService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.ParameterizedTypeReference;
-import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.springframework.boot.web.servlet.server.Session.SessionTrackingMode.URL;
 
 @CrossOrigin
 @RestController

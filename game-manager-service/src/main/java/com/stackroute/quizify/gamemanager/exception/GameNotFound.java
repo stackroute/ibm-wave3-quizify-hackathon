@@ -1,4 +1,4 @@
-package com.example.stackroute.gamemanager.exception;
+package com.stackroute.quizify.gamemanager.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

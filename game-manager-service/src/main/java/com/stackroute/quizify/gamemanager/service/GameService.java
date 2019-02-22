@@ -1,9 +1,8 @@
-package com.example.stackroute.gamemanager.service;
+package com.stackroute.quizify.gamemanager.service;
 
-import com.example.stackroute.gamemanager.domain.Game;
-import com.example.stackroute.gamemanager.domain.Question;
-import com.example.stackroute.gamemanager.exception.GameAlreadyExists;
-import com.example.stackroute.gamemanager.exception.GameNotFound;
+import com.stackroute.quizify.gamemanager.domain.Game;
+import com.stackroute.quizify.gamemanager.exception.GameAlreadyExists;
+import com.stackroute.quizify.gamemanager.exception.GameNotFound;
 
 import java.util.List;
 

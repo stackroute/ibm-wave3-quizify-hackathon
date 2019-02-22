@@ -1,4 +1,4 @@
-package com.example.stackroute.gamemanager;
+package com.stackroute.quizify.gamemanager;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

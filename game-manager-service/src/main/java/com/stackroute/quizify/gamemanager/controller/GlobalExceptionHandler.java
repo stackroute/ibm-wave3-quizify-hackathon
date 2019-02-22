@@ -1,7 +1,7 @@
-package com.example.stackroute.gamemanager.controller;
+package com.stackroute.quizify.gamemanager.controller;
 
-import com.example.stackroute.gamemanager.exception.GameAlreadyExists;
-import com.example.stackroute.gamemanager.exception.GameNotFound;
+import com.stackroute.quizify.gamemanager.exception.GameAlreadyExists;
+import com.stackroute.quizify.gamemanager.exception.GameNotFound;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;

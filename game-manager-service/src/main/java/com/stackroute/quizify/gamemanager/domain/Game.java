@@ -1,11 +1,10 @@
-package com.example.stackroute.gamemanager.domain;
+package com.stackroute.quizify.gamemanager.domain;
 
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.Arrays;
 import java.util.List;
 
 
@@ -14,7 +13,7 @@ import java.util.List;
 public class Game {
 
     @Id
-    private String id;
+    private long id;
     private String name;
     private Category category;
     private Topic topic;

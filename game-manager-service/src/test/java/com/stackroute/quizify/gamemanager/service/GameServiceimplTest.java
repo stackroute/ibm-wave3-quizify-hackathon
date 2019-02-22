@@ -1,20 +1,20 @@
-package com.example.stackroute.gamemanager.service;
+package com.stackroute.quizify.gamemanager.service;
 
 import com.example.stackroute.gamemanager.domain.*;
-import com.example.stackroute.gamemanager.exception.GameAlreadyExists;
-import com.example.stackroute.gamemanager.exception.GameNotFound;
-import com.example.stackroute.gamemanager.repository.GameRepository;
+import com.stackroute.quizify.gamemanager.exception.GameAlreadyExists;
+import com.stackroute.quizify.gamemanager.exception.GameNotFound;
+import com.stackroute.quizify.gamemanager.repository.GameRepository;
+import com.stackroute.quizify.gamemanager.domain.*;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
-import static org.junit.Assert.*;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.doReturn;
 
@@ -57,7 +57,7 @@ public class GameServiceimplTest  {
         Game game = new Game("g1","game1",category,20,8,questions,admin,topic,"medium");
         doReturn(false).when(gameRepository).existsById(game.getId());
         doReturn(game).when(gameRepository).save(game);
-        assertEquals(gameService.saveGame(game),game);
+        Assert.assertEquals(gameService.saveGame(game),game);
     }
 
     @Test
@@ -69,7 +69,7 @@ public class GameServiceimplTest  {
         Game game1 = new Game("g1","game1",category,3,6,questions,admin,topic,"easy");
         doReturn(true).when(gameRepository).existsById(game1.getId());
         doNothing().when(gameRepository).deleteById(game1.getId());
-        assertEquals(gameService.deleteGame(game1), "2");
+        Assert.assertEquals(gameService.deleteGame(game1), "2");
     }
 
     @Test
@@ -82,6 +82,6 @@ public class GameServiceimplTest  {
         doReturn(true).when(gameRepository).existsById(game.getId());
         doReturn(game).when(gameRepository).findById(game.getId());
         doReturn(game).when(gameRepository).save(game);
-        assertEquals(gameService.updateGame(game), game);
+        Assert.assertEquals(gameService.updateGame(game), game);
     }
 }

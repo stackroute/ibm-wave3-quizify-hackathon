@@ -1,7 +1,6 @@
-package com.example.stackroute.gamemanager.repository;
+package com.stackroute.quizify.gamemanager.repository;
 
-import com.example.stackroute.gamemanager.domain.Game;
-import com.example.stackroute.gamemanager.domain.Question;
+import com.stackroute.quizify.gamemanager.domain.Game;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
