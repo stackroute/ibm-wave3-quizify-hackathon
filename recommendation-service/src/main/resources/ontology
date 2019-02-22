@@ -1,8 +1,6 @@
 CREATE (Entertainment:Domain {domainName: 'Entertainment'})
-
 CREATE (Movie:Category {categoryName: 'Movie'})
 CREATE (Series:Category {categoryName: 'Series'})
-
 CREATE (Documentary:Genre {genreName: 'Documentary'})
 CREATE (Talkshow:Genre {genreName: 'Reality & Talk shows'})
 CREATE (Action:Genre {genreName: 'Action'})
