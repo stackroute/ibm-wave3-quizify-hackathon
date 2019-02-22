@@ -162,3 +162,19 @@ services:
     ports:
       - 4200:4200
     restart: always
+
+  single-player-service:
+    image: single-player-service
+    build: single-player-service/
+    restart: always
+    network_mode: host
+    depends_on:
+      - kafka
+      - mongo
+      - eurekaserver
+      - configserver
+      - apigateway
+    ports:
+      - 8108:8108
+    expose:
+      - 8108
