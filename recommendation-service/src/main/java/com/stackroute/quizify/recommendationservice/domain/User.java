@@ -25,8 +25,8 @@ public class User {
     private String confirmPassword;
     private String emailId;
     @Property
-    private List<Genre> interests;
-    private Topic topic;
+    private List<String> interests;
+//    private List<String> topics;
 
     @Property
     private String gender;;

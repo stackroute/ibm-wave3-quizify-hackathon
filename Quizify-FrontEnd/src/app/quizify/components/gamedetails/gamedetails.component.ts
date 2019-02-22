@@ -9,11 +9,9 @@ import { GamedetailsService } from '../../services/gamedetails.service';
 
 export class GamedetailsComponent implements OnInit {
 
-  method: any;  
+  method: any;
   constructor(private gamedetailsService: GamedetailsService) { }
-  
   quiz: any;
-  
   ngOnInit() {
    this.gamedetailsService.getDetails().subscribe(resposeQuiz => this.quiz = resposeQuiz);
  }
