@@ -32,14 +32,8 @@ import { GamedetailsComponent } from './components/gamedetails/gamedetails.compo
     GameComponent,
     QuestionGeneratorComponent,
     HeaderComponent,
-<<<<<<< HEAD
-    GamedetailsComponent,
-    
-=======
-
->>>>>>> 9b4b47c9c4b4e3d9a998a3219a723e27dab12efd
+    GamedetailsComponent
      ],
-     providers: [ CardService],
 
   imports: [
     CommonModule,
@@ -68,7 +62,8 @@ import { GamedetailsComponent } from './components/gamedetails/gamedetails.compo
     QuestionGeneratorComponent,
     GamedetailsComponent
    ],
-   providers: [ GamedetailsService ],
+   providers: [ CardService, GamedetailsService],
+
 
 })
 export class QuizifyModule { }

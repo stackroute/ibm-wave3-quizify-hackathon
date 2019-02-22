@@ -1,4 +1,4 @@
-package com.stackroute.searchservice.exception;
+package com.stackroute.quizify.searchservice.exception;
 
 public class TopicDoesNotExistsException extends Exception{
     private String message;

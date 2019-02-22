@@ -1,8 +1,8 @@
-package com.stackroute.searchservice.service;
+package com.stackroute.quizify.searchservice.service;
 
-import com.stackroute.searchservice.domain.Genre;
-import com.stackroute.searchservice.exception.GenreAlreadyExistsException;
-import com.stackroute.searchservice.exception.GenreDoesNotExistsException;
+import com.stackroute.quizify.searchservice.domain.Genre;
+import com.stackroute.quizify.searchservice.exception.GenreAlreadyExistsException;
+import com.stackroute.quizify.searchservice.exception.GenreDoesNotExistsException;
 
 import java.util.List;
 

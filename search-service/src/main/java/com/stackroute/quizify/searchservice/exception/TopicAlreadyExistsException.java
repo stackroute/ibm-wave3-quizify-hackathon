@@ -1,4 +1,4 @@
-package com.stackroute.searchservice.exception;
+package com.stackroute.quizify.searchservice.exception;
 
 public class TopicAlreadyExistsException extends Exception {
     private String message;

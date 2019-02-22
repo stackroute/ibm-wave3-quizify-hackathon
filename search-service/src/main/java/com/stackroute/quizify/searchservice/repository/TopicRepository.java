@@ -1,6 +1,6 @@
-package com.stackroute.searchservice.repository;
+package com.stackroute.quizify.searchservice.repository;
 
-import com.stackroute.searchservice.domain.Genre;
+import com.stackroute.quizify.searchservice.domain.Topic;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -9,9 +9,9 @@ import java.util.List;
 
 
 /*
- * This "GenreRepository" interface is used for CRUD operations in MongoDB.
+ * This "TopicRepository" interface is used for CRUD operations in MongoDB.
  *
- * In GenreRepository interface we gave Genre as the Document Type and String as the ID Type
+ * In TopicRepository interface we gave Genre as the Document Type and String as the ID Type
  * for the document.
  *
  * The Annotation "@Repository" is used to indicate that the class provides the mechanism for
@@ -23,10 +23,9 @@ import java.util.List;
  */
 
 @Repository
-public interface GenreRepository extends MongoRepository<Genre,String> {
+public interface TopicRepository extends MongoRepository<Topic,Long> {
+//    List<Topic> searchByTopicName(String topicName);
 
-//    List<Genre> searchByGenreName(String genreName);
-
-    @Query("{ genreName: { $regex: '?0', $options: 'i'} }")
-    List<Genre> searchByGenreAlphabet(String genreName);
+    @Query("{ topicName: { $regex: '?0', $options: 'i'} }")
+    List<Topic> searchByTopicAlphabet(String topicName);
 }

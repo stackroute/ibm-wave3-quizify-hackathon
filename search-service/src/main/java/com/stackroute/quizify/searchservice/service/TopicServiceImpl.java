@@ -1,9 +1,10 @@
-package com.stackroute.searchservice.service;
+package com.stackroute.quizify.searchservice.service;
 
-import com.stackroute.searchservice.domain.Topic;
-import com.stackroute.searchservice.exception.TopicAlreadyExistsException;
-import com.stackroute.searchservice.exception.TopicDoesNotExistsException;
-import com.stackroute.searchservice.repository.TopicRepository;
+
+import com.stackroute.quizify.searchservice.domain.Topic;
+import com.stackroute.quizify.searchservice.exception.TopicAlreadyExistsException;
+import com.stackroute.quizify.searchservice.exception.TopicDoesNotExistsException;
+import com.stackroute.quizify.searchservice.repository.TopicRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
