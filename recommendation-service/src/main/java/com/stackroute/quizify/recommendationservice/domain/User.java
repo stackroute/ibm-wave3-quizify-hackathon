@@ -11,22 +11,23 @@ import org.neo4j.ogm.annotation.NodeEntity;
 import org.neo4j.ogm.annotation.Property;
 import org.springframework.data.annotation.Transient;
 
+import java.util.List;
 
 
 @NodeEntity
 @Data
 public class User {
-    @Id //@GeneratedValue
+    @Id @GeneratedValue
     private long userId;
     @Property
     private String userName;
     private String password;
-    private String confirmpassword;
+    private String confirmPassword;
     private String emailId;
-
-    private String[] Interests;
     @Property
-    private String gender;
+    private List<String> interests;
+    @Property
+    private String gender;;
 }
 
 
