@@ -11,5 +11,5 @@ public interface UserService
 
     public List<User> getAllUsers();  ///RETRIEVE users
 
-    public User findByUserIdAndPassword(String userId,String password);
+    public User findByUserIdAndPassword(String username,String password);
 }
