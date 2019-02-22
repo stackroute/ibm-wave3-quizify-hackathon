@@ -1,13 +1,10 @@
-package com.stackroute.quizify.searchservice.domain;
+package com.stackroute.quizify.questionmanager.domain;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 
-import java.sql.Timestamp;
-import java.util.List;
-
 /*
- * This "Game" class is used to get game names from our message bus(Kafka).
+ * This "Admin" class is used to create documents which will store admin details.
  *
  * The Annotation "@Data" is used as a convenient shortcut annotation that bundles the features
  * of @ToString, @EqualsAndHashCode, @Getter / @Setter and @RequiredArgsConstructor together:
@@ -16,20 +13,15 @@ import java.util.List;
  *
  * The Annotation "@Id" is used to declare that the field "id" as the Primary Key which will be
  * Non-Null and Unique.
+ *
+ * The Field "id" will contain the Unique ID of Admin
+ *
+ * The Field "name" will contain user name or full name of the Admin.
  */
 
 @Data
-public class Game {
-
+public class Admin {
     @Id
-    private long gameId;
-    private String gameName;
-    private int gamesPlayed;
-    private String level;
-    private String imageUrl;
-    private String description;
-    private Timestamp duration;
-    private int likes;
-    private int numOfQuestion;
-
+    private long id;
+    private String name;
 }

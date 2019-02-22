@@ -12,5 +12,4 @@ public class Category{
     private long timeStamp;
     private Admin admin;
 
-
 }
