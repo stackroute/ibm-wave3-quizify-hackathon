@@ -5,13 +5,13 @@ import org.neo4j.ogm.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@RelationshipEntity(type = "Likes")
-public class Likes {
+@RelationshipEntity(type = "LikesTopic")
+public class LikesTopic {
     @Id
     @GeneratedValue
     private String id;
 
-    private List<String> quizzes=new ArrayList<>();
+    private List<String> Topics=new ArrayList<>();
 
     @StartNode
     private User user;

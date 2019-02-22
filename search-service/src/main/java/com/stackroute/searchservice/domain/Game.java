@@ -21,7 +21,7 @@ import java.sql.Timestamp;
 public class Game {
 
     @Id
-    private String gameId;
+    private Long gameId;
     private String gameName;
     private int gamesPlayed;
     private String level;

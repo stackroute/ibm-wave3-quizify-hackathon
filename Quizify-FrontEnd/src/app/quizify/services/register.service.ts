@@ -1,5 +1,6 @@
 import { Injectable, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Register } from '../tsclasses/register';
 @Injectable({
    providedIn: 'root'
 })
@@ -7,14 +8,14 @@ export class RegisterService {
    url: string;
    response: any;
    get: any;
-constructor(private http: HttpClient,
-   private userid: string,
-   private password: string,
-   private confirmpassword: string,
-   private emailid: string,
-   private interests: string,
-   private gender: string,
-) { }
+constructor(private http: HttpClient) { }
+addUser(register: Register) {
+   this.url = 'http://localhost:8899/api/v1/user';
+   this.http.get(this.url).subscribe(resp => {
+      console.log(resp);
+      return this.http.post(this.url + '' , register, {observe: 'response'});
+   });
+}
 }
 
 
