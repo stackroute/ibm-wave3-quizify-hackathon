@@ -27,10 +27,10 @@ public class FeedDataApplicationListener implements ApplicationListener<ContextR
     @Override
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent)
     {
-        userRepository.save(new User("admin1", "admin1", "admin1"));
-        userRepository.save(new User("player1", "player1", "player1"));
-        userRepository.save(new User("player2", "player2", "player2"));
-        userRepository.save(new User("player3", "player3", "player3"));
+        userRepository.save(new User("admin", "123", "admin"));
+        userRepository.save(new User("player1", "123", "player"));
+        userRepository.save(new User("player2", "123", "player"));
+        userRepository.save(new User("player3", "123", "player"));
     }
 
 

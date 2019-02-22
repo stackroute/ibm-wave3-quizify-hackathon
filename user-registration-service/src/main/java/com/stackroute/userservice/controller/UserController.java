@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin
+@CrossOrigin (value = "*")
 @RestController
 @RequestMapping(value = "/api/v1")
 @Api(description = "shows the user information")
@@ -63,7 +63,7 @@ public class UserController {
     }
     @ApiOperation(value = "Removes the user into the repository")
     @DeleteMapping("/user/{id}")
-    public ResponseEntity<?> getDeleteUser( @PathVariable("id") String id){
+    public ResponseEntity<?> getDeleteUser( @PathVariable("id") Long id){
         ResponseEntity responseEntity;
 
         userService.deleteUser(id);

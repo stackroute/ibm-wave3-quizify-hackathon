@@ -1,6 +1,7 @@
 package com.stackroute.searchservice.service;
 
 import com.stackroute.searchservice.domain.Topic;
+import com.stackroute.searchservice.exception.TopicAlreadyExistsException;
 import com.stackroute.searchservice.exception.TopicDoesNotExistsException;
 
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.List;
  */
 
 public interface TopicService {
-    List<Topic> getAllTopicByName(String topicName) throws TopicDoesNotExistsException;
-    List<Topic> getAllTopicByStartsWith(String name)throws TopicDoesNotExistsException;
+    Topic saveTopic(Topic topic) throws TopicAlreadyExistsException;
+//    List<Topic> getAllTopicByName(String topicName) throws TopicDoesNotExistsException;
+    List<Topic> getAllTopicByStartsWith(String topicName) throws TopicDoesNotExistsException;
 }

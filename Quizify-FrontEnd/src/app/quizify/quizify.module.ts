@@ -1,3 +1,4 @@
+import { CardService } from './services/card.service';
 import { GamehistoryComponent } from './components/gamehistory/gamehistory.component';
 import { ProfileuserComponent } from './components/profileuser/profileuser.component';
 import { MatRadioModule } from '@angular/material/radio';
@@ -16,9 +17,15 @@ import { SearchComponent } from './components/search/search.component';
 import { GameComponent } from './components/game/game.component';
 import { QuestionGeneratorComponent } from './components/question-generator/question-generator.component';
 import { HeaderComponent } from './components/header/header.component';
-
+import { GamedetailsService } from './services/gamedetails.service';
 import { BrowserModule } from '@angular/platform-browser';
+<<<<<<< HEAD
 import { SingleplayerComponent } from './components/singleplayer/singleplayer.component';
+=======
+import { CookieService } from 'ngx-cookie-service';
+import { GamedetailsComponent } from './components/gamedetails/gamedetails.component';
+
+>>>>>>> e3290fc26791841884717db6afee04d81962dc79
 @NgModule({
   declarations: [ CardsComponent,
     ProfileComponent,
@@ -30,8 +37,13 @@ import { SingleplayerComponent } from './components/singleplayer/singleplayer.co
     GameComponent,
     QuestionGeneratorComponent,
     HeaderComponent,
+<<<<<<< HEAD
     SingleplayerComponent
+=======
+    GamedetailsComponent
+>>>>>>> e3290fc26791841884717db6afee04d81962dc79
      ],
+     providers: [ CardService, CookieService, GamedetailsService],
 
   imports: [
     CommonModule,
@@ -45,8 +57,6 @@ import { SingleplayerComponent } from './components/singleplayer/singleplayer.co
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule
-
-
   ],
   exports: [ CardsComponent,
     ProfileComponent,
@@ -56,8 +66,9 @@ import { SingleplayerComponent } from './components/singleplayer/singleplayer.co
     ProfileuserComponent,
     GamehistoryComponent,
     GameComponent,
-    QuestionGeneratorComponent
-   ]
+    QuestionGeneratorComponent,
+    GamedetailsComponent
+   ],
 
 })
 export class QuizifyModule { }
