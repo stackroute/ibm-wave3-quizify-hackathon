@@ -1,6 +1,7 @@
 package com.stackroute.searchservice.controller;
 
 import com.stackroute.searchservice.domain.Genre;
+import com.stackroute.searchservice.exception.GenreAlreadyExistsException;
 import com.stackroute.searchservice.exception.GenreDoesNotExistsException;
 import com.stackroute.searchservice.service.GenreService;
 import io.swagger.annotations.Api;
@@ -25,23 +26,37 @@ public class GenreController {
         this.genreService = genreService;
     }
 
-    @ApiOperation(value = "Search Genre By Name")
-    @GetMapping("/search/{topicName}")
-    public ResponseEntity<?> searchGenreByName(@PathVariable String genreName){
-        try {
-            return new ResponseEntity<List<Genre>>(genreService.getAllGenreByName(genreName), HttpStatus.OK);
-        }
-        catch (GenreDoesNotExistsException e)
+//    @ApiOperation(value = "Search Genre By Name")
+//    @GetMapping("/search/{topicName}")
+//    public ResponseEntity<?> searchGenreByName(@PathVariable String genreName){
+//        try {
+//            return new ResponseEntity<List<Genre>>(genreService.getAllGenreByName(genreName), HttpStatus.OK);
+//        }
+//        catch (GenreDoesNotExistsException e)
+//        {
+//            return new ResponseEntity<String>(e.getMessage(), HttpStatus.NOT_FOUND);
+//        }
+//    }
+
+    @ApiOperation(value = "Save Genre")
+    @PostMapping
+    public ResponseEntity<?> saveGenre(@RequestBody Genre genre){
+        try
         {
-            return new ResponseEntity<String>(e.getMessage(), HttpStatus.NOT_FOUND);
+            return new ResponseEntity<Genre>(genreService.saveGenre(genre), HttpStatus.OK);
         }
+        catch (GenreAlreadyExistsException e)
+        {
+            return new ResponseEntity<String >(e.getMessage(), HttpStatus.NOT_FOUND);
+        }
+
     }
 
     @ApiOperation(value = "Search Genre By Starts With")
-    @GetMapping("/search/{name}")
-    public ResponseEntity<?>searchGenreByStartsWith(@PathVariable String name){
+    @GetMapping("/search/{genreName}")
+    public ResponseEntity<?>searchGenreByStartsWith(@PathVariable String genreName){
         try {
-            return new ResponseEntity<List<Genre>>(genreService.getAllGenreByStartsWith(name), HttpStatus.OK);
+            return new ResponseEntity<List<Genre>>(genreService.getAllGenreByStartsWith(genreName), HttpStatus.OK);
         }
         catch (GenreDoesNotExistsException e)
         {

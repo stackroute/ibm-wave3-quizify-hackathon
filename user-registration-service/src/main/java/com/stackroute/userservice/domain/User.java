@@ -1,11 +1,7 @@
 package com.stackroute.userservice.domain;
 
-
-import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
 import org.springframework.data.annotation.Id;
-
-import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.GeneratedValue;
@@ -13,15 +9,12 @@ import javax.persistence.GenerationType;
 import java.util.List;
 
 
-@Document(collection = "User")
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
+@Document(collection = "UserDoc")
+@Data
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String userId;
+    private long userId;
     private String userName;
     private String password;
     private String confirmPassword;

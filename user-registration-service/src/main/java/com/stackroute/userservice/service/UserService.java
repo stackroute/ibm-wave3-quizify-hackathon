@@ -12,6 +12,6 @@ public interface UserService {
     public User saveUser(User user) throws  UserAlreadyExistException, UserNotFoundException;
     public List<User> getAllUsers();
     public User updateUser(User user) throws UserNotFoundException;
-    public boolean deleteUser(String id);
+    public boolean deleteUser(Long id);
 
 }

@@ -1,7 +1,7 @@
- <form #userDetails = "ngForm" (ngSubmit) = "saveDetails(userDetails)">
+ <!-- <form #userDetails = "ngForm" (ngSubmit) = "saveDetails(userDetails)">
    <div class = "heading">
      <h3 class = "heading"> Registration</h3>
-   </div>
+   </div> -->
 
 
   <mat-horizontal-stepper linear>
@@ -26,7 +26,8 @@
                 [(ngModel)]="ConfirmPassword" required/>
                 <mat-hint></mat-hint>
               </mat-form-field> <br>
-          <button mat-button matStepperNext>Next</button>
+             
+          <button mat-button class = "nextbtn" matStepperNext>Next</button>
     </form>
     </mat-step>
 
@@ -56,10 +57,10 @@
                 <mat-radio-button value="1">Male</mat-radio-button> 
                 <mat-radio-button value="2">Female</mat-radio-button>
               </mat-radio-group>
-              <br>
-              <button mat-button matStepperPrevious>Back</button> <tr></tr>
+              <br> <br> <br>
+              <button mat-button class = "prebtn" matStepperPrevious>Back</button> <br> <br> <br>
 
-      <button mat-raised-button (click) ="Submit()" matStepperNext>Submit</button>
+      <button mat-raised-button class = "btn"(click)="submit($event)" matStepperNext>Submit</button>
 
       </form>
       
@@ -75,4 +76,4 @@
         
       </mat-step>
 
-</mat-horizontal-stepper> </form>
+</mat-horizontal-stepper>

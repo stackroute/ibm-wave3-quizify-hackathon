@@ -1,6 +1,7 @@
 package com.stackroute.searchservice.service;
 
 import com.stackroute.searchservice.domain.Topic;
+import com.stackroute.searchservice.exception.TopicAlreadyExistsException;
 import com.stackroute.searchservice.exception.TopicDoesNotExistsException;
 import com.stackroute.searchservice.repository.TopicRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,18 +25,23 @@ public class TopicServiceImpl implements TopicService{
         this.topicRepository=topicRepository;
     }
 
+//    @Override
+//    public List<Topic> getAllTopicByName(String topicName) throws TopicDoesNotExistsException {
+//        List<Topic> allTopics = topicRepository.searchByTopicName(topicName);
+//        if(allTopics==null)
+//            throw new TopicDoesNotExistsException("No Game Found");
+//        else
+//            return allTopics;
+//    }
+
     @Override
-    public List<Topic> getAllTopicByName(String topicName) throws TopicDoesNotExistsException {
-        List<Topic> allTopics = topicRepository.searchByTopicName(topicName);
-        if(allTopics==null)
-            throw new TopicDoesNotExistsException("No Game Found");
-        else
-            return allTopics;
+    public Topic saveTopic(Topic topic) throws TopicAlreadyExistsException {
+        return topicRepository.save(topic);
     }
 
     @Override
-    public List<Topic> getAllTopicByStartsWith(String name) throws TopicDoesNotExistsException {
-        List<Topic> topics = topicRepository.searchByTopicAlphabet(name);
+    public List<Topic> getAllTopicByStartsWith(String topicName) throws TopicDoesNotExistsException {
+        List<Topic> topics = topicRepository.searchByTopicAlphabet(topicName);
         if(topics==null)
             throw new TopicDoesNotExistsException("No Game Found");
         else
