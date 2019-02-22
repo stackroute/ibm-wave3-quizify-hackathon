@@ -4,6 +4,7 @@ import com.stackroute.quizify.questionmanager.domain.Question;
 import com.stackroute.quizify.questionmanager.exception.NoQuestionFoundException;
 import com.stackroute.quizify.questionmanager.exception.QuestionAlreadyExistsException;
 import com.stackroute.quizify.questionmanager.exception.QuestionDoesNotExistException;
+import com.stackroute.quizify.questionmanager.producer.QuestionProducer;
 import com.stackroute.quizify.questionmanager.repository.QuestionRepository;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +20,10 @@ import java.util.List;
 
 @Service
 public class QuestionServiceImpl implements QuestionService {
+
+    /*Kafka Settings  */
+    private String bootstrapServer = "localhost:9092";
+    private String topicName = "question";
 
     private QuestionRepository questionRepository;
 
@@ -36,7 +41,7 @@ public class QuestionServiceImpl implements QuestionService {
         if (this.questionRepository.existsById(question.getId()))
             throw new QuestionAlreadyExistsException("Question Already Exists!");
         else
-            return this.questionRepository.save(question);
+            return QuestionProducer.produce(this.questionRepository.save(question), this.bootstrapServer, this.topicName);
     }
 
     /*
@@ -46,7 +51,7 @@ public class QuestionServiceImpl implements QuestionService {
     @Override
     public Question updateQuestion(Question question) throws QuestionDoesNotExistException {
         if (this.questionRepository.existsById(question.getId()))
-            return this.questionRepository.save(question);
+            return QuestionProducer.produce(this.questionRepository.save(question), this.bootstrapServer, this.topicName);
         else
             throw new QuestionDoesNotExistException("Question Does Not Exist!");
 
@@ -61,7 +66,7 @@ public class QuestionServiceImpl implements QuestionService {
     public Question removeQuestion(Question question) throws QuestionDoesNotExistException {
         if (this.questionRepository.existsById(question.getId())) {
             this.questionRepository.delete(question);
-            return question;
+            return QuestionProducer.produce(question, this.bootstrapServer, this.topicName);
         }
         else
             throw new QuestionDoesNotExistException("Question Does Not Exist!");

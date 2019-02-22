@@ -20,6 +20,19 @@ public class Game {
     private int playcount;
     private int quesNum;
     private List<Question> questions;
+
+    public Game(String id, String name, Category category, int playcount, int quesNum, List<Question> questions, Admin admin, Topic topic, String level) {
+        this.id = id;
+        this.name = name;
+        this.category = category;
+        this.playcount = playcount;
+        this.quesNum = quesNum;
+        this.questions = questions;
+        this.admin = admin;
+        this.topic = topic;
+        this.level = level;
+    }
+
     private Admin admin;
     private Topic topic;
     private String level;

@@ -10,7 +10,7 @@ export class Game {
      category: Category;
      playcount: number;
      qnum: number;
-     questions: Question[] = new Question[this.qnum];
+     questions: Question[];
      admin: Admin;
      topic: Topic;
      level: string;
