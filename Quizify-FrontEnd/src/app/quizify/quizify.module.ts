@@ -18,6 +18,7 @@ import { QuestionGeneratorComponent } from './components/question-generator/ques
 import { HeaderComponent } from './components/header/header.component';
 
 import { BrowserModule } from '@angular/platform-browser';
+import { SingleplayerComponent } from './components/singleplayer/singleplayer.component';
 @NgModule({
   declarations: [ CardsComponent,
     ProfileComponent,
@@ -28,7 +29,8 @@ import { BrowserModule } from '@angular/platform-browser';
     GamehistoryComponent,
     GameComponent,
     QuestionGeneratorComponent,
-    HeaderComponent
+    HeaderComponent,
+    SingleplayerComponent
      ],
 
   imports: [
