@@ -19,6 +19,7 @@ import { QuestionGeneratorComponent } from './components/question-generator/ques
 import { HeaderComponent } from './components/header/header.component';
 import { GamedetailsService } from './services/gamedetails.service';
 import { BrowserModule } from '@angular/platform-browser';
+import { CookieService } from 'ngx-cookie-service';
 import { GamedetailsComponent } from './components/gamedetails/gamedetails.component';
 
 @NgModule({
@@ -49,10 +50,7 @@ import { GamedetailsComponent } from './components/gamedetails/gamedetails.compo
     BrowserModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule,
-
-
-
+    MatButtonModule
   ],
   exports: [ CardsComponent,
     ProfileComponent,

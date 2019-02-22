@@ -24,6 +24,7 @@ import java.util.*;
 @CrossOrigin(value = "*")
 @RequestMapping("api/")
 @RestController
+
 public class UserController {
     private UserService userService;
 ResponseEntity responseEntity;
@@ -42,19 +43,19 @@ ResponseEntity responseEntity;
 
         try {
 
-            String userId = loginDetails.getUserId();
+            String username = loginDetails.getUsername();
             String password = loginDetails.getPassword();
 
 
-            if (userId == null || password == null) {
+            if (username == null || password == null) {
 
-                throw new UserNameOrPasswordEmpty("Userid and Password cannot be empty");
+                throw new UserNameOrPasswordEmpty("Username and Password cannot be empty");
 
             }
 
 
 
-            User user = userService.findByUserIdAndPassword(userId, password);
+            User user = userService.findByUserIdAndPassword(username, password);
 
 
 
@@ -85,7 +86,7 @@ ResponseEntity responseEntity;
 
                 String jwtToken = "";
 
-                jwtToken = Jwts.builder().setId(user.getUserId()).setSubject(user.getRole()).setIssuedAt(new Date())
+                jwtToken = Jwts.builder().setId(user.getUsername()).setSubject(user.getRole()).setIssuedAt(new Date())
 
                         .signWith(SignatureAlgorithm.HS256, "secretkey").compact();
 
@@ -120,7 +121,7 @@ ResponseEntity responseEntity;
 
 
     }
-    @ApiOperation(value = "Gets all the user details(userId,password,role)")
+    @ApiOperation(value = "Gets all the user details(username,password,role)")
     @GetMapping("user")
     public ResponseEntity<?> getAllUser()
     {

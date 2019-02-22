@@ -11,6 +11,7 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
     UserRepository userRepository;
+    InterestsService interestsService;
 
     @Autowired
     public UserServiceImpl(UserRepository userRepository) {
@@ -32,7 +33,9 @@ public class UserServiceImpl implements UserService {
         long id=user.getUserId();
         String name=user.getUserName();
         String gender=user.getGender();
-        return userRepository.createNode(id,name,gender);
+        List<String> interests=user.getInterests();
+        interestsService.getInterests(user);
+        return userRepository.createNode(id,name,gender,interests);
     }
     @Override
     public User delete(long userId) {

@@ -3,6 +3,7 @@ package com.stackroute.searchservice.repository;
 import com.stackroute.searchservice.domain.Topic;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -21,9 +22,10 @@ import java.util.List;
  *
  */
 
+@Repository
 public interface TopicRepository extends MongoRepository<Topic,String> {
-    List<Topic> searchByTopicName(String topicName);
+//    List<Topic> searchByTopicName(String topicName);
 
-    @Query("{ trackName: { $regex: '?0', $options: 'i'} }")
-    List<Topic> searchByTopicAlphabet(String name);
+    @Query("{ topicName: { $regex: '?0', $options: 'i'} }")
+    List<Topic> searchByTopicAlphabet(String topicName);
 }

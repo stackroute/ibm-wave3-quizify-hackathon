@@ -18,7 +18,7 @@ public interface UserRepository extends Neo4jRepository<User, Long> {
     public User getNode(@Param("userId") long userId);
 
     @Query("CREATE (u:User) SET u.id={userId},u.userName={userName},u.gender={gender} RETURN u")
-    User createNode( long userId,String userName, String gender);
+    User createNode( long userId,String userName, String gender, List<String> interests);
 
     @Query("MATCH (n:User) WHERE id(n)={userId} DETACH DELETE n RETURN 'node deleted' ")
     User deleteNode(@Param("userId") long userId);

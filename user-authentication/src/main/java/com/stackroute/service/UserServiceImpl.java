@@ -20,15 +20,15 @@ public class UserServiceImpl implements UserService {
 
 
     @Override
-    public User findByUserIdAndPassword(String userId, String password) {
-        return userRepo.findByUserIdAndPassword(userId, password);
+    public User findByUserIdAndPassword(String username, String password) {
+        return userRepo.findByUsernameAndPassword(username, password);
     }
 
 
     @Override
     public User saveUser(User user)throws UserNameNotFoundException
     {
-        if(userRepo.existsById(user.getUserId())){
+        if(userRepo.existsById(user.getUsername())){
             throw new UserNameNotFoundException("User already exists!!");
 
         }

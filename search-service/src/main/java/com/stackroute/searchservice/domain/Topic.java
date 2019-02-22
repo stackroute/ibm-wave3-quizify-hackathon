@@ -22,7 +22,7 @@ import java.util.List;
 @Document(collection="topic")
 public class Topic {
     @Id
-    private String topicId;
+    private Long topicId;
     private String topicName;
     private String imageUrl;
     private List<Game> game;
