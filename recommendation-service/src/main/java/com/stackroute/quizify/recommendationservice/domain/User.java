@@ -25,9 +25,9 @@ public class User {
     private String confirmPassword;
     private String emailId;
     @Property
-    private List<String> interests;
-    private List<String> topics;
-    
+    private List<Genre> interests;
+    private Topic topic;
+
     @Property
     private String gender;;
 }

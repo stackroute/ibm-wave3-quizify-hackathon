@@ -1,5 +1,9 @@
-package com.stackroute.quizify.recommendationservice.domain;
+package com.stackroute.quizify.kafka.domain;
 
+import com.stackroute.quizify.recommendationservice.domain.Admin;
+import com.stackroute.quizify.recommendationservice.domain.Category;
+import com.stackroute.quizify.recommendationservice.domain.Question;
+import com.stackroute.quizify.recommendationservice.domain.Topic;
 import lombok.Data;
 import org.neo4j.ogm.annotation.GeneratedValue;
 import org.neo4j.ogm.annotation.Id;
