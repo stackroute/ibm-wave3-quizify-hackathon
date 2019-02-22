@@ -1,70 +1,79 @@
+ <!-- <form #userDetails = "ngForm" (ngSubmit) = "saveDetails(userDetails)">
+   <div class = "heading">
+     <h3 class = "heading"> Registration</h3>
+   </div> -->
 
-<div class="container">
-  <h1>Register</h1>
-    <p>Please fill this form to create an account.</p> 
-</div>
 
-<mat-form-field appearance="outline" class="id">
-  <mat-label>UserId</mat-label>
-  <input matInput placeholder="Enter your userid" required />
-  <mat-hint></mat-hint>
-</mat-form-field>
-<br>
-  <mat-form-field appearance="outline" class="password">
-    <mat-label for = "psw">Password</mat-label>
-    <input type = "password"matInput placeholder="Enter your password" name = "psw" required/>
-    <mat-hint></mat-hint>
-  </mat-form-field>
-  <br>
+  <mat-horizontal-stepper linear>
+  <mat-step #myStep  [stepControl]="formGroup1" optional editable = "true" >
+    <form [formGroup] = "formGroup1">
+      <mat-form-field appearance="outline"  class = "username"> 
+          <mat-label for = "userName">UserName</mat-label>
+          <input matInput placeholder="UserId"  formControlName="firstCtrl" autocomplete="off"
+          [(ngModel)]="UserName"required>
+        </mat-form-field> <br>
+        
+          <mat-form-field appearance="outline" class="password">
+              <mat-label for = "psw">Password</mat-label>
+              <input type = "password"matInput placeholder="password" name = "psw" formControlName="firstCtrl" autocomplete="off"
+              [(ngModel)]="Password"required />
+              <mat-hint></mat-hint>
+            </mat-form-field> 
 
-  <mat-form-field appearance="outline" class="email" required>
-    <mat-label>EmailId</mat-label>
-    <input matInput placeholder="Enter your emailId" />
-    <mat-hint></mat-hint>
-  </mat-form-field>
-<br>
-  <mat-form-field appearance="outline" class="username" required>
-    <mat-label>UserName</mat-label>
-    <input matInput placeholder="Enter your username" />
-    <mat-hint></mat-hint>
-  </mat-form-field>
+            <mat-form-field appearance="outline" class="confirmpassword">
+                <mat-label for = "psw">ConfirmPassword</mat-label>
+                <input type = "password"matInput placeholder="Confirm password" name = "psw" formControlName="firstCtrl" autocomplete="off"
+                [(ngModel)]="ConfirmPassword" required/>
+                <mat-hint></mat-hint>
+              </mat-form-field> <br>
+             
+          <button mat-button class = "nextbtn" matStepperNext>Next</button>
+    </form>
+    </mat-step>
 
-   <br>  
-<!-- 
-   <div ng-controller="SelectAsyncController" layout="column" layout-align="center center" style="padding:40px" ng-cloak>
-    <p>Select can call an arbitrary function on show. If this function returns a promise, it will display a loading indicator while it is being resolved:</p>
-    <div layout="column" layout-align="center center">
-      <md-select placeholder="select intrests" ng-model="user" md-on-open="loadUsers()" style="min-width: 200px;">
-        <md-option ng-value="user" ng-repeat="user in users">{{user.name}}</md-option>
-      </md-select>
-      <p class="md-caption">You have assigned the task to: {{ user ? user.name : 'No one yet' }}</p>
-    </div>
-  </div> -->
-  <div class="Level-container">
-    <mat-form-field  appearance="outline" class="interests" required>
-      <select matNativeControl required>
-          <option value="select">Interests</option>
+  <mat-step #myStep [stepControl]="formGroup2" optionl editable = "false" >
+      <form  [formGroup] = "formGroup2" >
+          <mat-form-field appearance="outline"  class = "userid" > 
+              <mat-label for = "emailid">EmailId</mat-label>
+              <input matInput placeholder="EmailId"  autocomplete="off"
+              [(ngModel)]="Emaild" formControlName="secondCtrl" required>
+            </mat-form-field> <br>
 
-        <option value="GK">Gk</option>
-        <option value="Technologies">Technologies</option>
-        <option value="sports">Sports</option>
-        <option value="Entertainment">Entertainment</option>
-    
-      </select>
-    </mat-form-field>
-    </div>
-  <mat-radio-group appearance="outline" class="gender" required>
-      <mat-label>Gender</mat-label>
-      <mat-radio-button value="1">Male</mat-radio-button>
-      <mat-radio-button value="2">Female</mat-radio-button>
-    </mat-radio-group>
-    <br>
-  <br>
-  <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-  <br>
+            <div class="Level-container" fxLayout="row" fxLayoutAlign="center center">
+              <mat-form-field appearance="outline" class = "interests" required>
+                <mat-select
+                    placeholder="Select Interests"
+                    [(value)]="selectedLevel"
+                  >
+                    <mat-option *ngFor="let level of levels" [value]="level.value">
+                      {{ level.viewValue }}
+                    </mat-option>
+                </mat-select>
+              </mat-form-field>
+              </div>
+           <br>
+            <mat-radio-group appearance="outline" class="gender" required>
+                <mat-label>Gender</mat-label> 
+                <mat-radio-button value="1">Male</mat-radio-button> 
+                <mat-radio-button value="2">Female</mat-radio-button>
+              </mat-radio-group>
+              <br> <br> <br>
+              <button mat-button class = "prebtn" matStepperPrevious>Back</button> <br> <br> <br>
 
+      <button mat-raised-button class = "btn"(click)="submit($event)" matStepperNext>Submit</button>
+
+      </form>
+      
+    </mat-step>
+    <mat-step #myStep [stepControl]="formGroup3" optional editable = "false">
+        <form [formGroup] = "formGroup3">
+          
+         <p><b> Thank you for registering</b> <br><br>
+
+      <b> You have successfully signed up as a user!</b> </p>
   
-  <button mat-raised-button="next" class="nextbtn">Register<a href = "#"Register (input)="onClick($event)"></a></button>
-  <br> 
-<!-- <input type = "button" class = "nextbtn" value = "Register" -->
-<!-- <button type="submit" onclick="register()"  class="btn">Register</button> -->
+        </form>
+        
+      </mat-step>
+
+</mat-horizontal-stepper>

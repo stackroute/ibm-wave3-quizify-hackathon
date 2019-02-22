@@ -16,6 +16,8 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 // import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatStepperModule} from '@angular/material/stepper';
+
 
 
 
@@ -33,7 +35,7 @@ import { FormsModule } from '@angular/forms';
        MatRadioModule,
        MatChipsModule,
        MatSelectModule,
-       RouterModule,
+       RouterModule, MatStepperModule,
       // FlexLayoutModule,
        MatButtonModule,
        MatCheckboxModule,
@@ -65,7 +67,7 @@ import { FormsModule } from '@angular/forms';
           MatInputModule,
           MatChipsModule,
           MatSelectModule,
-          RouterModule,
+          RouterModule, MatStepperModule,
          // FlexLayoutModule,
           MatButtonModule,
           MatCheckboxModule,

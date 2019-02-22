@@ -13,7 +13,7 @@ export class GameserviceService {
 
   constructor(private http: HttpClient) {
     this.format = '&format=json';
-    this.url = 'http://localhost:8102/game-manager-service/api/v1/';
+    this.url = 'http://0.0.0.0:8092/game-manager-service/api/v1/';
 
    // this.tracksSubject = new BehaviorSubject(this.tracks);
   }
@@ -33,8 +33,9 @@ export class GameserviceService {
 
   addGame(game: Game) {
     console.log(game);
+    const url2 = 'http://13.232.243.68:8092/game-manager-service/api/v1/games/game';
     return this.http
-    .post(this.url + 'games/game', game, { observe: 'response' });
+    .post(url2, game, { observe: 'response' });
   }
 
   updateAddedGame(game: Game) {

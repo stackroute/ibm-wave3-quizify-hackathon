@@ -10,8 +10,21 @@
     }}</mat-chip>
   </mat-chip-list>
 </section>
-<div class="Level-container">
-<h4>Level</h4>
+
+
+<div fxLayout="row" fxLayoutAlign="center center">
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Enter Name for Game"
+        autocomplete="off"
+        [(ngModel)]="gameName"
+      />
+    </mat-form-field>
+</div>
+
+
+<div class="Level-container" fxLayout="row" fxLayoutAlign="center center">
 <mat-form-field>
   <mat-select
       placeholder="Select Game Level"
@@ -23,7 +36,7 @@
   </mat-select>
 </mat-form-field>
 </div>
-<div>
+<div fxLayout="row" fxLayoutAlign="center center">
   <br>
     <mat-form-field>
       <input
@@ -34,8 +47,9 @@
       />
     </mat-form-field>
 </div>
-<br>
-<button mat-button
-class="save-game"
-(click)="saveGames()"
->Submit</button>
+
+<div fxLayout="row" fxLayoutAlign="center center">
+<button mat-raised-button color="warn" (click)="saveGames()">Save Game</button>
+</div>
+
+
