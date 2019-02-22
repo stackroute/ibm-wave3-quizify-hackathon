@@ -18,6 +18,7 @@ import { QuestionGeneratorComponent } from './components/question-generator/ques
 import { HeaderComponent } from './components/header/header.component';
 
 import { BrowserModule } from '@angular/platform-browser';
+import { CookieService } from 'ngx-cookie-service';
 @NgModule({
   declarations: [ CardsComponent,
     ProfileComponent,
@@ -46,6 +47,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 
   ],
+  providers : [CookieService],
   exports: [ CardsComponent,
     ProfileComponent,
     RegisterComponent,
