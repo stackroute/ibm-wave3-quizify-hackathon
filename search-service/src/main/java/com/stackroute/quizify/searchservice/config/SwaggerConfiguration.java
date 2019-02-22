@@ -1,4 +1,4 @@
-package com.stackroute.searchservice.config;
+package com.stackroute.quizify.searchservice.config;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;

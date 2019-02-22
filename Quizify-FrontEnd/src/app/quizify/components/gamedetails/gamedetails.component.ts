@@ -11,9 +11,7 @@ export class GamedetailsComponent implements OnInit {
 
   method: any;
   constructor(private gamedetailsService: GamedetailsService) { }
-
   quiz: any;
-
   ngOnInit() {
    this.gamedetailsService.getDetails().subscribe(resposeQuiz => this.quiz = resposeQuiz);
  }
