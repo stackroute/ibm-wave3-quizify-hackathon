@@ -163,7 +163,7 @@ services:
       - 4200:4200
     restart: always
 
-  single-player-service:
+  single-player-engine:
     image: single-player-service
     build: single-player-service/
     restart: always
