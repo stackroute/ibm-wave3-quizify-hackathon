@@ -1,121 +1,23 @@
+<app-header></app-header>
 
-  <app-header></app-header>
-
-    
-     
-   <div class="container">
-   
-    <mat-card class="example-card">
-   
-       <img mat-card-image src="../assets/images/33.jpg" alt="Photo ">
-       <div class="overlay">
-             
-        <!-- <img mat-card-image src="../assets/images/5.jpg" alt="Photo ">     -->
-        <div class="text">Quick Play</div>
+<div class="container">
+<div *ngFor="let q of quiz">
+  <mat-card class="example-card">
+    <img mat-card-image src="{{ q.image_Url }}" alt="Photo " />
+    <div class="overlay">
+      <div class="text">
+        <ul >
+          <li>{{ q.GameId }}</li>
+          <li>{{ q.Name }}</li>
+          <img class="sub-image" src="{{ q.image_Url }}" />
+        </ul>
       </div>
-   
-       <mat-card-actions >
-        <i class="material-icons">
-          favorite play_arrow settings
-          </i>
-   
-       </mat-card-actions>
-     
-     </mat-card>
-     <mat-card class="example-card">
-   
-      <img mat-card-image src="../assets/images/5.jpg" alt="Photo ">
-      <div class="overlay">
-        <div class="text">Quick Play</div>
-      </div>
-      <mat-card-actions>
-       <i class="material-icons">
-         favorite play_arrow settings
-         </i>
-   
-      </mat-card-actions>
-    </mat-card>
-    <mat-card class="example-card">
-   
-      <img mat-card-image src="../assets/images/3.jpg" alt="Photo ">
-      <div class="overlay">
-        <div class="text">Quick Play</div>
-      </div>
-      <mat-card-actions>
-       <i class="material-icons">
-         favorite play_arrow settings
-         </i>
-   
-      </mat-card-actions>
-    </mat-card>
-    <mat-card class="example-card">
-   
-      <img mat-card-image src="../assets/images/4.jpg" alt="Photo">
-      <div class="overlay">
-        <div class="text">Quick Play</div>
-      </div>
-      <mat-card-actions>
-       <i class="material-icons">
-         favorite play_arrow settings
-         </i>
-   
-      </mat-card-actions>
-    </mat-card>
-   </div>
-   <div class="contain">
-   
-    <mat-card class="example-cards">
-   
-       <img mat-card-image src="../assets/images/33.jpg" alt="Photo ">
-       <div class="overlay1">
-        <div class="text1">Quick Play</div>
-      </div>
-       <mat-card-actions >
-        <i class="material-icons">
-          favorite play_arrow settings
-          </i>
-   
-       </mat-card-actions>
-     </mat-card>
-     <mat-card class="example-cards">
-   
-      <img mat-card-image src="../assets/images/5.jpg" alt="Photo ">
-      <div class="overlay1">
-        <div class="text1">Quick Play</div>
-      </div>
-      <mat-card-actions>
-       <i class="material-icons">
-         favorite play_arrow settings
-         </i>
-   
-      </mat-card-actions>
-    </mat-card>
-    <mat-card class="example-cards">
-   
-      <img mat-card-image src="../assets/images/3.jpg" alt="Photo ">
-      <div class="overlay1">
-        <div class="text1">Quick Play</div>
-      </div>
-      <mat-card-actions>
-       <i class="material-icons">
-         favorite play_arrow settings
-         </i>
-   
-      </mat-card-actions>
-    </mat-card>
-    <mat-card class="example-cards">
-   
-      <img mat-card-image src="../assets/images/4.jpg" alt="Photo">
-      <div class="overlay1">
-        <div class="text1">Quick Play</div>
-      </div>
-      <mat-card-actions>
-       <i class="material-icons">
-         favorite play_arrow settings
-         </i>
-   
-      </mat-card-actions>
-    </mat-card>
-   
-   </div>
-   
+    </div>
+  </mat-card>
+  <mat-card-actions>
+      <i class="material-icons" >
+        favorite play_arrow settings
+      </i>
+    </mat-card-actions>
+</div>
+</div>

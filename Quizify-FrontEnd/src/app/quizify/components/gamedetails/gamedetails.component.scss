@@ -1,0 +1,28 @@
+.container{
+    display: flex;
+    width: 80%;
+    height: 100%;
+    bottom: 300px;
+    padding-top:150px;
+  }
+  
+
+  .example-card
+  { height: 200px;
+    box-shadow: 3px 3px black, -1em 0 .4em gray;
+    background-color: rgb(197, 226, 68);
+    text-decoration-color: white;
+  }
+
+
+  .example-card
+  {
+      width: 300px;
+  }
+
+  .start{
+  
+     float: right;
+     bottom: 0px;
+  }
+  

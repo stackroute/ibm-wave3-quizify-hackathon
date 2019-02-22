@@ -1,3 +1,4 @@
+import { CardService } from './../../services/card.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardsComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(private cardService: CardService) { }
+  method: any;
+  quiz: any;
 
   ngOnInit() {
+    for (let i = 0; i < 2; i++) {
+    this.cardService.getquiz().subscribe(resposeQuiz => this.quiz = resposeQuiz);
+    }
   }
 
 }

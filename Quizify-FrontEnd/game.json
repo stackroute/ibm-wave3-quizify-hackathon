@@ -1,0 +1,24 @@
+{
+    "game": [
+      {
+        "gameId": 1,
+        "gameName": "BREAKING BAD",
+        "gamesPlayed": 2,
+        "level": "Easy",
+        "imageUrl": "json-server",
+        "description": null,
+        "likes": 20,
+        "noOfQuestion": 10
+      },
+      {
+        "gameId": 2,
+        "gameName": "Mr. Bean",
+        "gamesPlayed": 2,
+        "level": "Medium",
+        "imageUrl": "json-server",
+        "description": null,
+        "likes": 20,
+        "noOfQuestion": 10
+      }
+    ]
+}
