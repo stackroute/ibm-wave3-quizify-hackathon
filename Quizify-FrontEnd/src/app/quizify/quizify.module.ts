@@ -19,13 +19,10 @@ import { QuestionGeneratorComponent } from './components/question-generator/ques
 import { HeaderComponent } from './components/header/header.component';
 import { GamedetailsService } from './services/gamedetails.service';
 import { BrowserModule } from '@angular/platform-browser';
-<<<<<<< HEAD
 import { SingleplayerComponent } from './components/singleplayer/singleplayer.component';
-=======
 import { CookieService } from 'ngx-cookie-service';
 import { GamedetailsComponent } from './components/gamedetails/gamedetails.component';
 
->>>>>>> e3290fc26791841884717db6afee04d81962dc79
 @NgModule({
   declarations: [ CardsComponent,
     ProfileComponent,
@@ -37,13 +34,11 @@ import { GamedetailsComponent } from './components/gamedetails/gamedetails.compo
     GameComponent,
     QuestionGeneratorComponent,
     HeaderComponent,
-<<<<<<< HEAD
+    GamedetailsComponent,
     SingleplayerComponent
-=======
-    GamedetailsComponent
->>>>>>> e3290fc26791841884717db6afee04d81962dc79
      ],
-     providers: [ CardService, CookieService, GamedetailsService],
+     providers: [ CardService,
+      GamedetailsService],
 
   imports: [
     CommonModule,
@@ -69,6 +64,7 @@ import { GamedetailsComponent } from './components/gamedetails/gamedetails.compo
     QuestionGeneratorComponent,
     GamedetailsComponent
    ],
+  
 
 })
 export class QuizifyModule { }
