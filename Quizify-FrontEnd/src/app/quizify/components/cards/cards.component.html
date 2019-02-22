@@ -1,8 +1,9 @@
 <app-header></app-header>
+
 <div class="container">
 <div *ngFor="let q of quiz">
   <mat-card class="example-card">
-    <img mat-card-image src="../assets/images/33.jpg" alt="Photo " />
+    <img mat-card-image src="{{ q.image_Url }}" alt="Photo " />
     <div class="overlay">
       <div class="text">
         <ul >
@@ -14,37 +15,9 @@
     </div>
   </mat-card>
   <mat-card-actions>
-      <i class="material-icons" matBadge="22" matBadgeColor="accent">
+      <i class="material-icons" >
         favorite play_arrow settings
       </i>
     </mat-card-actions>
 </div>
 </div>
-<!-- <mat-card-actions>
-  <i class="material-icons" matBadge="22" matBadgeColor="accent">
-    favorite play_arrow settings
-  </i>
-</mat-card-actions> -->
-
-
-<!-- <div class="container">
-    <mat-card class="example-card">
-      <img mat-card-image src="../assets/images/33.jpg" alt="Photo " />
-      <div class="overlay">
-        <div class="text">
-          <ul *ngFor="let q of quiz2">
-            <li>{{ q.GameId }}</li>
-            <li>{{ q.Name }}</li>
-            <img class="sub-image" src="{{ q.image_Url }}" />
-          </ul>
-        </div>
-      </div>
-    </mat-card>
-  </div>
-  <mat-card-actions>
-    <i class="material-icons" matBadge="22" matBadgeColor="accent">
-      favorite play_arrow settings
-    </i>
-  </mat-card-actions>
-
- -->
